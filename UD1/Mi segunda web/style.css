@@ -1,0 +1,122 @@
+@import url(https://fonts.googleapis.com/css?family=Comfortaa:300,regular,500,600,700);
+
+
+*,::before,::after{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #272946;
+  color: #e7ffee;
+  padding: 0;
+  margin:0;
+}
+
+nav{
+  background-color: #eda031cc;
+  padding: 1rem;
+  border-bottom: 3px solid #e7ffee;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer{
+  background-color: #e7ffee11;
+  text-align: center;
+  padding: 3rem;
+  margin-top: 6rem;
+  border-top: 3px solid #e7ffee;
+
+  & p {
+    font-size: 2rem;
+  }
+}
+
+
+
+
+main{
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+
+pre{
+  background-color: #e7ffee33;
+  padding: 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+code{
+  background-color: #e7ffee33;
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 3px;
+}
+
+
+blockquote{
+  background-color: #eda031;
+  color:#272946;
+  padding:0.5rem;
+  max-width: 40rem;
+  border-radius: 5px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+
+header{
+  background-color: #eda031;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+h1{
+  font-family: 'Comfortaa','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #eda031;
+  font-weight: 100;
+  font-size: 5rem;
+
+  text-align: center;
+  color:#272946;
+  font-weight: 900;
+  border-radius: 5px;
+}
+
+h2{
+  color:#eda031;
+  font-weight: 200;
+  font-size: 2.5rem;
+  /* text-decoration: wavy underline 2px red; */
+  border-bottom: 1.5px solid #eda031;
+}
+
+
+em{
+  background-color: #eda03155;
+}
+
+
+a{
+  color: #eda031;
+  text-decoration: none;
+}
+
+
+form{
+  border: 1px solid #eda031;
+  border-radius: 5px;
+  padding: 1rem;
+  max-width: 40rem;
+  margin: 0 auto;
+
+  & div{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
