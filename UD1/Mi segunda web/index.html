@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mi primera web</title>
   <link rel="stylesheet" href="style.css">
+  <script defer src="code.js"></script>
 </head>
 <body>
 
@@ -18,7 +19,7 @@
 
 
   <main>
-    <section>
+    <!-- <section>
       <p>Lorem
         la fórmula química del agua es H<sub>2</sub>0 dolor, <strong>sit amet consectetur adipisicing elit</strong>. Porro debitis sunt itaque laudantium voluptatibus ea sequi a aperiam eligendi aut. Officia excepturi praesentium harum sequi iure non assumenda recusandae suscipit.</p>
       
@@ -39,11 +40,11 @@
         -rw-rw-r-- 1 javier javier 1714 Sep 25 16:37 index.html
         -rw-rw-r-- 1 javier javier  925 Sep 25 16:31 style.css</pre>
       
-    </section>
+    </section> -->
 
 
 
-    <section>
+    <!-- <section>
       <h2>Jugando con el emmet</h2>
 
 
@@ -55,7 +56,7 @@
       <div>
         <img src="monroy2.png" alt="Logotipo del Monroy" loading="lazy">
       </div>
-    </section>
+    </section> -->
 
 
 
@@ -68,19 +69,28 @@
         
         <div>
           <label for="txtNombre">Nombre</label><br>
-          <input type="text" name="txtNombre" id="txtNombre"><br>
+          <input type="text" name="txtNombre" id="txtNombre" pattern="[A-ZÑ][a-zñ]+"><br>
         </div>
 
 
         <div>
           <label>
-            Edad<br>
-            <input type="number" name="txtEdad" id="txtEdad"><br>
+            Edad (debe ser mayor de edad)<br>
+            <input type="number" name="txtEdad" id="txtEdad" min="18" placeholder="Ej. 23"><br>
+          </label>
+        </div>
+
+
+        <div>
+          <label>
+            <input type="checkbox" name="peas" />
+            Do you like peas?
           </label>
         </div>
         
-        
-        <button>Enviar</button>>
+
+
+        <button type="button" id="btnEnviar">Enviar</button>
       </form>
     
     </section>

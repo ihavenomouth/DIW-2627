@@ -11,6 +11,7 @@ body{
   color: #e7ffee;
   padding: 0;
   margin:0;
+  accent-color: #eda031;
 }
 
 nav{
@@ -120,3 +121,71 @@ form{
     margin-bottom: 1rem;
   }
 }
+
+
+input{
+  padding: 0.25rem 0.5rem;
+  min-width: 15rem;
+  border: 2px solid #eda031;
+  border-radius: 5px;
+  appearance: textfield;
+  background-color: #e7ffeeee;
+  color:#272946;
+  
+  &:focus-visible{
+    background-color: #e7ffee;
+  }
+
+  &:user-invalid{
+    border: 2px dotted deeppink;
+  }
+}
+
+
+input[type=checkbox]{
+  min-width: 0;
+}
+
+form div:has(input:user-invalid){
+  &::after{
+    content: "El dato no es válido";
+    color:#e7ffeeaa;
+  }
+}
+
+
+
+
+button{
+  color: #272946;
+  border: 2px solid #eda031;
+  padding: 0.25rem 0.5rem;
+  min-width: 15rem;
+  border-radius: 5px;
+  background-color:#eda031;
+  font: inherit;
+  font-weight: 600;
+  font-variant-caps: all-small-caps;
+
+  &:hover{
+    /* background-color: red; */
+    filter: brightness(1.1);
+    cursor: pointer;
+  }
+
+  &:active{
+    filter:brightness(0.9);
+    /* transform: scale(0.95); */
+    transform: translate(1px, 2px);
+  }
+  
+  &:disabled{
+    filter:grayscale();
+    cursor:auto;
+  }
+
+
+}
+
+
+
