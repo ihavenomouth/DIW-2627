@@ -1,0 +1,52 @@
+@import url(https://fonts.googleapis.com/css?family=Jost:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+*,::before,::after{
+  box-sizing: border-box;
+}
+
+
+body{
+  margin: 0 auto;
+  max-width: 40rem;
+  padding: 1rem;
+  font-family: 'Jost',Arial, Helvetica, sans-serif;
+  background-color: #456;
+  color:antiquewhite;
+}
+
+h1{
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+h1 span{
+  color:white;
+}
+
+table{
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th{
+  border: 1px solid antiquewhite;
+  padding: 0.25rem 1rem;
+  text-align: center;
+}
+
+thead th{
+  background-color: salmon;
+}
+
+tfoot th{
+  background-color: #fa807244;
+  font-weight: 400;
+}
+
+tbody td:first-child{
+  background-color: #fa807244;
+}
+
+caption{
+  font-size: 0.75rem;
+}

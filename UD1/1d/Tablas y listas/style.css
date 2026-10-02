@@ -11,3 +11,10 @@ td, th{
   border: 1px solid black;
   padding: 1rem;
 }
+
+thead th{
+  background-color: black;
+  color: white;
+  position: sticky;
+  top:0;
+}
