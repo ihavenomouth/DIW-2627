@@ -1,0 +1,90 @@
+@import url(https://fonts.googleapis.com/css?family=Kripa:100,200,300,regular,500,600,700,800,900);
+
+
+*,::before,::after{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Kripa',Arial, Helvetica, sans-serif;
+  background-color: black;
+  background: 
+    linear-gradient(rebeccapurple, #00000033), 
+    linear-gradient(45deg, navy, #00000033),
+    radial-gradient(circle at 20%,
+      #333333,
+      #333333 50%,
+      #eeeeee 75%,
+      #333333 75%
+    );
+  min-height: 100vh;
+  max-width: 60rem;
+  margin: 0 auto;
+  color:aqua;
+  padding: 3rem 1rem;
+  accent-color: aqua;
+}
+
+h1{
+  font-size: 5rem;
+  font-weight: 300;
+}
+
+h2{
+  font-size: 3rem;
+  font-weight: 300;
+  border-bottom: 2px solid aqua;
+}
+
+
+
+option{
+  text-align: center;
+}
+
+form > div{
+  margin-top: 2rem; 
+  margin-bottom: 2rem; 
+}
+
+label{
+  display: block;
+  font-variant-caps: all-small-caps;
+  text-decoration: underline 1px solid aqua;
+}
+
+label> input:not(:is(input[type="checkbox"], input[type="radio"])), label>textarea, label>select{
+  display: block;
+  width: 100%;
+
+  padding: 0.5rem 2rem;
+  background-color: rgb(214, 255, 255);
+  outline: 0;
+  border: 2px solid aqua;
+  border-radius: 3px;
+  font: inherit;
+  font-size: 1.5rem;
+}
+
+select{
+  min-width: 15rem;
+}
+
+
+form> button{
+  min-width: 15rem;
+  border: 2px solid aqua;
+  border-radius: 3px;
+  padding: 0.5rem 2rem;
+  background-color: rebeccapurple;
+  font: inherit;
+  color:whitesmoke;
+  font-variant-caps: all-small-caps;
+  font-weight: 600;
+
+    &:hover{
+      background-color: aqua;
+      color: rebeccapurple;
+      cursor: pointer;
+    }
+}

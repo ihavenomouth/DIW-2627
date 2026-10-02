@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ejercicio 1 - formulario</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+	<main>
+
+		<h1>Diseño de interfaces web</h1>
+		
+		<h2>Datos del usuario</h2>
+		<form method="get" action="getDato.php">
+
+		<div class="form-group">
+			<label for="txtNombre">Nombre:</label>
+			<input type="text" name="txtNombre" id="txtNombre" required maxlength="20" minlength="2">
+		</div>
+
+		<div class="form-group">
+			<label for="txtApellidos">Apellidos:</label>
+			<input type="text" name="txtApellidos" id="txtApellidos" required maxlength="20" minlength="2">
+		</div>
+		
+		
+		
+		<fieldset>
+			<legend>Mayor de edad:</legend>
+			
+			<div>
+				<input type="radio" id="mayoredadsi" name="mayoredad" value="sí" checked />
+				<label for="mayoredadsi">Sí</label>
+			</div>
+			
+			<div>
+				<input type="radio" id="mayoredadno" name="mayoredad" value="no" />
+				<label for="mayoredadno">No</label>
+			</div>
+			
+		</fieldset>
+		
+		<div class="form-group">
+			<label for="txtEmail">Correo electrónico:</label>
+			<input type="email" name="txtApellidos" id="txtApellidos"><br><br>
+		</div>
+		
+		<fieldset>
+			<legend>Opciones de privacidad:</legend>
+			
+			<div>
+				<input type="checkbox" id="info" name="info" value="info" checked />
+				<label for="info">Deseo recibir información sobre novedades y ofertas</label>
+			</div>
+			
+			<div>
+				<input type="checkbox" id="privacidad" name="privacidad" required value="privacidad" />
+				<label for="privacidad">He leído y acepto las condiciones y la política de protección de datos</label>
+			</div>
+
+		</fieldset>
+		
+		<button>Enviar</button>
+	</form>
+</main>
+
+</body>
+
+</html>

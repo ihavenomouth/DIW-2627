@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio de formulario 2</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Ejercicio de formulario 2</h1>
+
+  <h2>Reserva de aula</h2>
+  <form>
+    <div>
+      <label>
+        Nombre del profesor:
+        <input type="text" name="profesor" list="profesores" required>
+      </label>
+    
+      <datalist id="profesores">
+        <option value="Juan Pérez"></option>
+        <option value="María López"></option>
+        <option value="Carlos García"></option>
+        <option value="Ana Martínez"></option>
+      </datalist>  
+    </div>
+
+    <div>
+      <label>
+        Comentarios:
+        <textarea name="comentarios" cols="20" rows="7"></textarea>
+      </label>
+    </div>
+  
+    <div>
+      <label>
+        Día de la reserva:
+        <input type="date" name="fecha">
+      </label>
+    </div>
+  
+    <div>
+      <label>
+        Horas:
+        <select name="horas" multiple required>
+          <option value="1ª">1ª</option>
+          <option value="2ª">2ª</option>
+          <option value="3ª">3ª</option>
+          <option value="4ª">4ª</option>
+          <option value="5ª">5ª</option>
+          <option value="6ª">6ª</option>
+        </select>
+      </label>
+    </div>
+  
+    <div>
+      <label>
+        <input type="checkbox" name="recreo">
+        Necesitará también el recreo
+      </label>
+    </div>
+  
+    <div>
+      <label>
+        Departamento:
+        <select name="departamento" required>
+          <option value="" disabled selected>Seleccione un departamento</option>
+          <option value="Informática">Informática</option>
+          <option value="Inglés">Inglés</option>
+          <option value="Matemáticas">Matemáticas</option>
+        </select>
+      </label>
+    </div>
+  
+    <div>
+      <fieldset>
+        <legend>Curso:</legend>
+        <label>
+          <input type="radio" name="curso" value="1" checked>
+          Primer curso
+        </label>
+        <label>
+          <input type="radio" name="curso" value="2">
+          Segundo curso
+        </label>
+      </fieldset>
+    </div>
+  
+    <button type="submit">Reservar aula</button>
+  </form>
+</body>
+</html>

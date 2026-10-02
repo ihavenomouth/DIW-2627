@@ -1,0 +1,128 @@
+@import url(https://fonts.googleapis.com/css?family=Finlandica+Text:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+*,::before,::after{
+  box-sizing: border-box;
+}
+
+
+html{
+  /* overscroll-behavior: none; */
+  background-color: rebeccapurple;
+}
+
+body{
+  font-family: 'Finlandica Text',Arial, Helvetica, sans-serif;
+  background: inherit;
+  min-height: 100dvh;
+  background: linear-gradient(lightcoral, deeppink);
+  accent-color: rebeccapurple;
+  margin: 0;
+  padding:3rem 0;
+  color: hsl(270, 50%, 20%);
+}
+
+main{
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 1rem;  
+}
+
+
+h1{
+  font-size: 5rem;
+  font-weight: 600;
+  color: lightpink;
+  text-align: center;
+  text-shadow: 2px 2px 5px #66339944;
+  text-wrap-style: balance;
+}
+
+h2{
+  font-size: 2rem;
+  font-weight: 600;
+  background-color: rebeccapurple;
+  filter: opacity(0.7);
+  color: lightpink;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+
+form{
+  background-color: lightpink;
+  padding: 2rem;
+  border-radius: 10px;
+  /* border-left: 1px solid white;
+  border-right: 1px solid white; */
+  box-shadow: 2px 2px 5px #66339944;
+  
+  display: grid;
+  gap: 2rem;
+  
+  @media screen and (width>50rem){
+    grid-template-columns: 1fr 1fr;
+    /* background-color: red; */
+    fieldset{
+      grid-column: 1 / -1;
+    }
+    button{
+      grid-column: 1 / 2;
+    }
+  }
+}
+
+
+
+input{
+  font: inherit;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  outline: 0;
+  background-color: antiquewhite;
+  border:0;
+  &:focus-visible{
+    outline: 3px solid rebeccapurple;
+    background-color: white;
+  }
+}
+
+input[type="radio"]:focus-visible, input[type="radio"]:focus{
+  outline: 2px dashed rebeccapurple;
+  outline-offset: 3px;
+}
+
+div.form-group{
+  /* margin-top: 1rem; */
+  display: grid;
+}
+
+label, legend, button{
+  font-variant-caps: all-small-caps;
+  font-size: 1.25rem;
+}
+
+
+fieldset{
+  border: 2px solid rebeccapurple;
+  border-radius: 10px;
+}
+
+button{
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  background-color: rebeccapurple;
+  font: inherit;
+  border:0;
+  justify-self: left;
+  min-width: 10rem;
+  color: lightpink;
+  font-weight: 700;
+
+  &:hover{
+    filter: saturate(1.5);
+    cursor:pointer;
+  }
+  &:active{
+    transform: scale(0.95);
+    filter:opacity(0.75);
+  }
+}
