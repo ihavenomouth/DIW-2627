@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú Semanal</title>
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Comfortaa:300,regular,500,600,700);
+    :root {
+      --bg-color: #d6c380;
+      --card-bg: #fafafa;
+      --text-color: #3e332a;
+      --accent-color: #b5835a;
+      --border-color: #e2d7cd;
+    }
+    
+    body {
+      font-family: 'Comfortaa','Tahoma', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      accent-color: var(--accent-color);
+      max-width: 600px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+    }
+
+
+    
+    section{
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      margin-top: 3rem;
+    }
+    
+    h1 {
+      margin-top: 0;
+      font-weight: 400;
+      color: var(--accent-color);
+    }
+    
+    
+    button {
+      background-color: var(--accent-color);
+      color: #ffffff;
+      border: none;
+      padding: 0.75rem;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      /* font-family: inherit;
+      font-size: 1rem; 
+      font: inherit;
+      */
+      
+      &:hover {
+        filter:brightness(1.1);
+      }
+    }
+
+    input[type="text"],
+    textarea {
+      padding: 0.6rem;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      /* font-family: inherit;
+      font-size: 1rem; 
+      font: inherit;
+      */
+      accent-color: var(--accent-color);
+    }
+    
+    
+    
+    
+    
+    
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-weight: 500;
+    }
+    
+    
+    input[type="text"]:focus,
+    textarea:focus {
+      outline: 2px solid var(--accent-color);
+      border-color: transparent;
+    }
+
+    fieldset {
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      padding: 1rem;
+      margin: 0;
+    }
+    
+    legend {
+      padding: 0 0.5rem;
+      font-weight: 500;
+    }
+    
+    fieldset div {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    
+    fieldset label {
+      flex-direction: row;
+      align-items: center;
+      gap: 0.4rem;
+      font-weight: normal;
+      cursor: pointer;
+    }
+    
+    input[type="checkbox"] {
+      width: 1.1rem;
+      height: 1.1rem;
+    }
+    
+    a{
+      color: var(--accent-color);
+      font-family: 'Comfortaa','Tahoma', system-ui, -apple-system, sans-serif;
+    }
+
+    .explicación{
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-indent: 1rem;
+    }
+
+    code{
+      font-size: 1rem;
+      color: var(--accent-color);
+      background-color: var(--border-color);
+      padding-inline: 5px;
+      font-family: 'Comfortaa','Tahoma', system-ui, -apple-system, sans-serif;
+    }
+
+  </style>
+</head>
+<body>
+  <main>
+
+    <section class="explicación">
+      <h1>Atributos heredables</h1>
+      <p>En este ejemplo se ha usado una tipografía llamada <a href="https://fonts.google.com/specimen/Comfortaa">Comfortaa</a> con una letra <code>a</code> muy característica. Esta tipografía se establece en el <code>&lt;body&gt;</code> y es heredada por casi todos los elementos (esta explicación usa otra tipografía para facilitar la lectura).</p>
+      <p>Sin embargo, si te fijas en los campos de tipo texto, el <em>textarea</em> y el botón verás que el tamaño y la tipografía usada no es la misma que en resto de la página. De hecho en el textarea es monoespaciada y diferente al resto (fíjate en la letra <code>i</code>).</p>
+      <p>Al mismo tiempo puedes ver cómo la etiqueta <code>&lt;h1&gt;</code> sí que hereda la fuente de su elemento padre. Otro atributo heredable es el de <code>color</code> que establece el color del texto, pero de nuevo no por todos los elementos (fíjate en el formulario, en los mismos controles de antes). En el caso de la etiqueta <code>&lt;code&gt;</code> hereda el color, pero no el tamaño de las letras (cambia el valor de <code>font-family</code> para verlo).</p>
+    </section>
+
+    <section>
+      <h1>Añadir al Menú Semanal</h1>
+      <form>
+        <label>
+          Nombre del plato
+          <input type="text" name="nombre_plato" required placeholder="Tortilla">
+        </label>
+        
+        <label>
+          Ingredientes principales
+          <textarea name="ingredientes" rows="4" required placeholder="Aceite, huevos, etc."></textarea>
+        </label>
+        
+        <fieldset>
+          <legend>Día de la semana</legend>
+          <div>
+            <label><input type="checkbox" name="dia" value="lunes"> Lunes</label>
+            <label><input type="checkbox" name="dia" value="martes"> Martes</label>
+            <label><input type="checkbox" name="dia" value="miercoles"> Miércoles</label>
+            <label><input type="checkbox" name="dia" value="jueves"> Jueves</label>
+          <label><input type="checkbox" name="dia" value="viernes"> Viernes</label>
+          <label><input type="checkbox" name="dia" value="sabado"> Sábado</label>
+          <label><input type="checkbox" name="dia" value="domingo"> Domingo</label>
+        </div>
+      </fieldset>
+      
+      <button type="submit">Añadir</button>
+    </form>
+  </section>
+  </main>
+</body>
+</html>
