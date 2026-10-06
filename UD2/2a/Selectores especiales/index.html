@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selectores especiales</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Selectores especiales en CSS</h1>
+  </header>
+  <main>
+    <section>
+      <h2>Selector +</h2>
+      <p>El primero de los selectores especiales que vamos a ver es el selector <code>+</code>, que permite seleccionar los hermanos inmediatos de otro selector. Lo importante es que los elementos seleccionados deben aparecer inmediatamente detrás del primer selector.</p>
+
+      <p>Un ejemplo muy típico a la hora de hacer un documento de texto es que al primer párrafo no se le suele aplicar una sangría de primera línea, mientras que a los siguientes sí. De esta manera el primer párrafo tendrá todas sus líneas rectas, mientras que los siguientes tendrán una sangría de primera línea.</p>
+
+      <p>En este mismo texto se puede apreciar la ausencia de sangría en el primer párrafo y su presencia en los siguientes. El CSS que se está aplicando a los párrafos es el siguiente.</p>
+
+      <pre>
+p{
+  text-align: justify;
+}
+
+p + p{
+  text-indent: 1rem;
+}
+</pre>
+
+
+      <p>Sin embargo, en este párrafo no se aplica la sangría de primera línea, porque aunque es un hermano de otros párrafos, su hermano inmediatamente anterior es un elemento <code>pre</code>.</p>
+
+
+      <p>Otro ejemplo es el de un campo de formulario en el que el mensaje de error ya está presente en el HTML, pero no está visible.</p>
+
+      <p>En el formulario de abajo ocurre precisamente esto, si escribes un nombre que no cumpla las restricciones, aparecerá el mensaje de error.</p>
+
+      <form>
+        <label>Introduzca su nombre:
+          <input type="text" placeholder="Ana" pattern="[A-ZÑÁÉÍÓÚ][a-záéíóúüñç]+">
+          <p class="mensaje-error"><strong>Error:</strong> el nombre debe contener al menos dos letras, la primera debe ser mayúscula y el resto minúsculas.</p>
+        </label>
+      </form>
+
+      <p>El CSS del mensaje de error es sencillo, sólo vamos a destacar un par de reglas relacionadas con él porque el resto no es relevante (puedes verla con las <em>Developer tools</em> si te interesa).</p>
+      <p>El mensaje de error ya aparece en el HTML, pero tiene asignada la regla <code>display: none;</code>, de modo que está oculto.</p>
+
+      <p>Cuando el contenido del input cambia y resulta ser erróneo, se le aplica la pseudoclase <code>:invalid</code> y por tanto la segunda regla entra en juego. Esto es posible porque el mensaje de error es hermano directo del cuadro de texto.</p>
+
+      <pre>
+        p.mensaje-error{
+          display: none;
+          ...
+        }
+
+        input:invalid + p.mensaje-error{
+          display: block;
+        }
+      </pre>
+      
+    </section>
+    
+    
+    <section>
+      <h2 class="virgulilla">Selector ~</h2>
+      
+      <p >El segundo selector especial es <code>~</code> (en castellano ese símbolo se conoce como virgulilla), que permite seleccionar los hermanos del primer selector sean o no hermanos directos. Es decir, se seleccionarán aunque haya otras etiquetas entre ellos.</p>
+
+      <p>Por ejemplo, el encabezado <code>&lt;h2&gt;</code> de esta sección tiene una clase llamada <code>virgulilla</code>.</p>
+
+      <p>Si ahora vamos al CSS, veremos que existe la siguiente regla.</p>
+<pre>
+.virgulilla ~ pre{
+  border: 2px dotted #7c5e10;
+}</pre>
+
+      <p>Como se ve se el recuadro de arriba tiene un borde puntuado por esa regla, porque se seleccionan los <code>&lt;pre&gt;</code> que son hermanos de una etiqueta con la clase <code>virgulilla</code>.</p>
+
+      <p>Sin embargo el pre de abajo no se ve afectado porque no es un hermano del <code>&lt;h2&gt;</code> al encontrarse dentro de un <code>&lt;div&gt;</code></p>
+
+      <div>
+        <pre>Este recuadro no se ve afectado porque es el hijo de un hermano (un sobrino), no un hermano directo.</pre>
+      </div>
+
+      <p>Otro ejemplo es el de un menú que aparece cuando se pulsa un botón. En este caso en lugar de un botón se ha usado un <code>checkbox</code> que se ha ocultado, se marcará y desmarcará pulsando en la etiqueta (que se ha estilizado como si fuera un botón).</p>
+
+      <form>
+        <input type="checkbox" id="togglemenu" class="toggle-menu">
+        <label for="togglemenu">Ver menú</label>
+
+        <menu class="menu">
+          <li>Opción 1</li>
+          <li>Opción 2</li>
+          <li>Opción 3</li>
+        </menu>
+      </form>
+
+      <p>El HTML correspondiente lo puedes ver con las <em>Developer tools</em> y comprobarás que el orden en el que aparecen las etiquetas es <code>form &gt; input + label + menu</code>. Es decir, dentro de form las tres etiquetas son hermanas, estando <code>&lt;label&gt;</code> en medio de las otras dos.</p>
+      
+      <p>En el CSS, por tanto, no podemos usar el selector <code>+</code>, sino <code>~</code>.</p>
+<pre>
+  .menu{
+    ...
+    transform: translate(-1000px);
+    opacity: 0;
+  }
+
+  .toggle-menu:checked ~ .menu{
+  transform: translate(0px);
+  opacity: 1;
+}
+</pre>
+    </section>
+  </main>
+
+</body>
+</html>
