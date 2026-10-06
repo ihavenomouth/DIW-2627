@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Modelo de cajas de CSS</h1>
+
+  <p>Imagina que queremos crear un diseño en el que aparezcan cuadrados de exactamente <tt>100px</tt> de ancho. Lo más sencillo es realizar lo siguiente:</p>
+
+  <pre>
+    section div{
+      width: 100px;
+      height: 100px;
+    }
+</pre>
+<p>Ahora añadimos un <em>padding</em> y un borde para mejorar la estética.</p>
+<pre>
+    section div{
+      width: 100px;
+      height: 100px;
+      border: 5px dashed #123;
+      padding: 10px;
+    }
+</pre>
+
+  <p>Cada cuadro tiene un lado de <tt>100px</tt> de ancho e incluye un borde de <tt>5px</tt> y un <code>padding</code> de <tt>10px</tt>. Sumando estos valores tendremos por tanto: <tt>5+10+100+10+5 + 5+10+100+10+5 + 5+10+100+10+5 = <output>390 píxeles</output></tt>.</p>
+
+  <p>Si bien en principio esto puede parecer razonable, en la práctica causa muchos problemas. El borde y el <em>padding</em> ocupan espacio y, como se ve en el ejemplo de abajo, se extiende el fondo.</p>
+
+  <p>Si queremos que ocupen <tt>100px</tt>, en realidad el ancho debería ser menor, de sólo <tt>70px</tt>.</p>
+
+  <p>Esto obliga a tener en cuenta el tamaño del borde y el <em>padding</em> al crear el <em>layout</em> de nuestro diseño para evitar posibles desbordamientos.</p>
+
+  <p>Para evitar tener que estar realizando sumas, lo más sencillo es utilizar la regla  <code>*,::before,::after{box-sizing: border-box}</code>, de manera que el borde en lugar de extender la caja hacia afuera, se colocará por dentro. Pulsa <kbd>F12</kbd> y modifica la regla CSS para ver la diferencia. Podrás ver que ahora las cajas ocuparán <tt>300px</tt> independientemente del <em>padding</em> o el borde.</p>
+
+  
+  <h2 class="grande div2">Modelo de cajas (390px)</h2>
+
+  <section>
+    <div class="div1">Primera caja</div>
+    <div class="div2">Segunda de las cajas</div>
+    <div class="div3">La última caja</div>
+  </section>
+  
+  <h2>Modelo de cajas (300px)</h2>
+  
+  <p>Por último puedes probar a cambiar la regla del borde para que en lugar de usar un <code>border</code> use <code>outline</code>. Verás que se coloca por fuera del cuadrado y que además no ocupa espacio.</p>
+
+</body>
+</html>
