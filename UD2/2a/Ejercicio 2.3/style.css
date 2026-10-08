@@ -1,0 +1,48 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+*,::after,::before{
+  box-sizing: border-box;
+}
+
+
+body{
+  font-family: 'Nunito Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0 auto;
+  padding: 2rem;
+  max-width: 60rem;
+}
+
+table{
+  border-collapse: collapse;
+  width: 100%;
+  border: 2px solid black;
+}
+
+caption {
+  background: bisque;
+  font-size: 0.75rem;
+  margin-block: 0.5rem;
+}
+
+td {
+  border: 1px solid black;
+  text-align: center;
+}
+
+th {
+  background-color: burlywood;
+}
+
+tr:nth-child(2n+1) {
+  background: bisque;
+}
+
+tr:hover {
+  background-color: chocolate;
+  & td{
+    color: white;
+  }
+}
+
+
+
