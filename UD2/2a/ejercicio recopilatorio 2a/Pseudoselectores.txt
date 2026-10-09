@@ -1,0 +1,2 @@
+Haz que cuando el ratón esté sobre un párrafo se aplique un filtro de brightness(0.9);
+Haz que al primer elemento article que aparece en la web se le aplique un filtro contrast(1.5);

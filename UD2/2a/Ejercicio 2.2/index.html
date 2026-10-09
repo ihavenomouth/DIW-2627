@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 2.2</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="code.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Ejercicio 2.2</h1>
+    <p>Crea una web que contenga como título <em>Gestor de tareas</em>, un formulario y una lista vacía y sin ordenar con id resultado. El formulario constará de un cuadro de texto donde escribir el nombre de una tarea y cuando se haga <em>click</em> en el botón se recogerá el contenido del cuadro de texto y se añadirá un elemento a la lista.</p>
+
+    <p>Añade una hoja de estilos que mejore la estética teniendo en cuenta los siguientes puntos:</p>
+      
+    <ul>
+        <li>Las tareas deben empezar por mayúsculas. Si no es así se debe indicar que el contenido no es correcto de alguna manera visual (fondo rosado, borde rojo, ... ).</li>
+        <li>Cuando el ratón se coloque sobre el botón debe destacarse de alguna manera. También debe destacarse cuando se pulse el botón.</li>
+        <li>Si el ratón se coloca encima de algún elemento de la lista, el texto aparecerá en negrita.</li>
+        <li>El color de fondo de los elementos de la lista que ocupen posición par será diferente del que ocupe una posición impar.</li>
+        <li>La lista tendrá un borde visible y un color de fondo, pero si está vacía no se verá nada de ella.</li>
+    </ul>
+
+    <p>Utiliza ayuda si la necesitas, pero intenta que la IA no te resuelva el ejercicio.</p>
+  </header>
+
+
+  <main>
+    <h1>Gestor de tareas</h1>
+    <form>
+      <div class="form-group">
+        <label for="txtTarea">Nueva tarea</label>
+        <input type="text" name="txtTarea" id="txtTarea" pattern="[A-Z].*">
+      </div>
+      <button type="button" id="btnAnadirTarea">Añadir tarea</button>
+
+    </form>
+    <ul id="resultado"></ul>
+  </main>
+
+</body>
+</html>

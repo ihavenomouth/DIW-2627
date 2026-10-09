@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio Recopilatorio CSS - Tema 2a</title>
+</head>
+<body>
+
+  <main class="hoja">
+
+    <header class="cabecera">
+      <span class="etiqueta-tema">Tema 2a: CSS · Ejercicio Recopilatorio</span>
+      <h1>Tarjeta Informativa "DevPress"</h1>
+      <p class="meta">
+        <strong>Tiempo estimado:</strong> 60 minutos &nbsp;|&nbsp;
+        <strong>Puntuación:</strong> 10 puntos &nbsp;|&nbsp;
+        <strong>Fichero de entrega:</strong> <code>estilos.css</code>
+      </p>
+    </header>
+
+    <section class="intro">
+      <p>
+        <strong>Objetivo:</strong> Diseña una hoja de estilos externa vinculada al HTML base semántico. Deberás estructurar la página en flujo normal (sin <code>float</code>, <code>flex</code> ni <code>grid</code>) usando <strong>únicamente 4 colores</strong> definidos en variables de <code>:root</code>.
+      </p>
+    </section>
+
+    <section class="seccion-requisitos">
+      <h2>Requisitos del Ejercicio</h2>
+
+      <article class="requisito">
+        <h3 class="requisito-titulo">
+          1. Paleta de 4 Colores y Reset Global
+          <span class="puntos">(2.0 pts)</span>
+        </h3>
+        <p class="requisito-cuerpo">
+          Declara en <code>:root</code> exactamente cuatro variables de color: el color primario, un fondo suave, un color para tarjetas y uno para textos. <strong>Toda la página debe usar exclusivamente estos 4 colores</strong> mediante <code>var(...)</code>. Aplica el reseteo <code>*, ::before, ::after { box-sizing: border-box; }</code>. En <code>body</code> aplica color de fondo y tipografía. Centra la tarjeta <code>main.tarjeta</code> con <code>margin: 2rem auto;</code> y un ancho máximo de <code>60ch</code> con <code>padding: 2rem;</code>.
+        </p>
+      </article>
+
+      <article class="requisito">
+        <h3 class="requisito-titulo">
+          2. Tipografía, Bordes y Combinador de Hermanos
+          <span class="puntos">(2.0 pts)</span>
+        </h3>
+        <p class="requisito-cuerpo">
+          Añade un borde visible y esquinas redondeadas (<code>border-radius</code>) a la tarjeta. Aplica <code>text-wrap: pretty</code> a los párrafos. Utiliza el combinador de hermano adyacente (<code>p + p</code>) para que los párrafos sucesivos tengan un margen superior adicional de <code>1rem</code>. Fuerza la herencia del tipo de letra en los controles con <code>button, input { font: inherit; }</code>.
+        </p>
+      </article>
+
+      <article class="requisito">
+        <h3 class="requisito-titulo">
+          3. Lista de Novedades con Selectores Estructurales
+          <span class="puntos">(2.0 pts)</span>
+        </h3>
+        <p class="requisito-cuerpo">
+          Quita las viñetas por defecto a <code>ul.novedades</code>. Con el combinador de hijo directo (<code>ul.novedades &gt; li</code>), añade relleno y margen a cada ítem. Alterna el color de fondo de las filas utilizando <code>li:nth-child(even)</code> y <code>li:nth-child(odd)</code> usando dos de tus cuatro colores. Al colocar el cursor encima (<code>li:hover</code>), resalta el elemento cambiando su color de fondo.
+        </p>
+      </article>
+
+      <article class="requisito">
+        <h3 class="requisito-titulo">
+          4. Formulario y Validación Visual sin Desplazamientos
+          <span class="puntos">(2.0 pts)</span>
+        </h3>
+        <p class="requisito-cuerpo">
+          El campo de correo es obligatorio. Cuando sea válido (<code>:valid</code>) y cuando sea inválido (<code>:invalid</code>), refleja su estado cambiando el color de fondo o borde (usando tus variables). Al recibir el foco (<code>:focus</code>), destaca el campo con <code>outline</code> para no alterar el tamaño de la caja. El botón tendrá <code>display: block; width: 100%; padding: 0.8rem;</code> y estilos diferenciados para <code>:hover</code> y <code>:active</code>.
+        </p>
+      </article>
+
+      <article class="requisito">
+        <h3 class="requisito-titulo">
+          5. Interactividad con <code>:target</code> y <code>:has()</code>
+          <span class="puntos">(2.0 pts)</span>
+        </h3>
+        <p class="requisito-cuerpo">
+          El bloque <code>aside#aviso</code> estará oculto al cargar la página con <code>display: none;</code>. Al pulsar el enlace que apunta a su ID, muéstralo mediante <code>#aviso:target { display: block; }</code>. El enlace de cerrar apunta a <code>#</code>. Además, añade automáticamente un asterisco del color primario tras la etiqueta del campo obligatorio usando <code>label:has(input:required)::after</code>.
+        </p>
+      </article>
+    </section>
+
+    <section class="seccion-codigo">
+      <h2>Estructura HTML Base (<code>index.html</code>)</h2>
+
+      <pre class="codigo-base">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;DevPress - Novedades&lt;/title&gt;
+  &lt;link rel="stylesheet" href="estilos.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;main class="tarjeta"&gt;
+    &lt;header&gt;
+      &lt;h1&gt;Boletín Semanal DevPress&lt;/h1&gt;
+      &lt;p&gt;Las mejores novedades y trucos de CSS directamente en tu correo.&lt;/p&gt;
+    &lt;/header&gt;
+
+    &lt;section class="novedades-bloque"&gt;
+      &lt;ul class="novedades"&gt;
+        &lt;li&gt;Nuevas pseudoclases en los navegadores actuales&lt;/li&gt;
+        &lt;li&gt;Cómo optimizar la especificidad en hojas extensas&lt;/li&gt;
+        &lt;li&gt;Buenas prácticas de box-sizing: border-box&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;p&gt;&lt;a href="#aviso"&gt;Ver condiciones de la suscripción&lt;/a&gt;&lt;/p&gt;
+    &lt;/section&gt;
+
+    &lt;aside id="aviso" class="caja-aviso"&gt;
+      &lt;p&gt;Condiciones: Sin spam. Puedes cancelar tu suscripción cuando quieras.&lt;/p&gt;
+      &lt;a href="#"&gt;Cerrar aviso&lt;/a&gt;
+    &lt;/aside&gt;
+
+    &lt;section class="registro-bloque"&gt;
+      &lt;form action="#" method="post"&gt;
+        &lt;label for="txtCorreo"&gt;Introduce tu correo:&lt;/label&gt;
+        &lt;input type="email" id="txtCorreo" name="txtCorreo" required placeholder="tu@correo.com"&gt;
+        &lt;button type="submit"&gt;Suscribirme al boletín&lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+    </section>
+
+    <footer class="pie">
+      <p>Recuerda: Todo el diseño se resuelve con flujo normal (sin <code>float</code>, <code>flex</code> ni <code>grid</code>) y usando exclusivamente las cuatro variables de color definidas.</p>
+    </footer>
+
+  </main>
+
+</body>
+</html>

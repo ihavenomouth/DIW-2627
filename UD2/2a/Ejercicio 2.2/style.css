@@ -1,0 +1,119 @@
+@import url(https://fonts.googleapis.com/css?family=Doppio+One:regular);
+
+
+*,::before,::after{
+  box-sizing: border-box;
+}
+
+:root{
+  --color200: #fff;
+  --color400: #678;
+  --color600: #345;
+}
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Doppio One','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--color400);
+  color: var(--color600);
+}
+
+header {
+  background-color: var(--color600);
+  padding: 1rem;
+  color: var(--color200);
+}
+
+header p, header ul {
+  max-width: 50rem;
+  margin-inline: auto;
+}
+
+header h1{
+  text-align: center;
+  font-weight: 900;
+  font-size: 4rem;
+}
+
+main{
+  max-width: 60rem;
+  margin-inline: auto;
+  background-color: var(--color200);
+  padding: 2rem;
+}
+
+
+
+main ul{
+  border: 3px solid var(--color600);
+  /* padding:1rem; */
+  background-color:  color-mix( in hsl, var(--color400), 80% transparent);
+  list-style: none;
+  padding-left:0;
+
+
+  
+  &:empty{
+    display: none;
+  }
+
+  & li{
+    margin-left: 0;
+    padding: 0.25rem;
+  }
+  & li:hover{
+    font-weight: 900;
+    font-size: 1.2rem;
+  }
+  & li:nth-child(even){
+    background-color: var(--color200);
+  }
+  & li:not(:last-child){
+    border-bottom: 3px solid var(--color600);
+  }
+}
+
+
+.form-group{
+  display: flex;
+  gap: 1rem;
+  margin-block: 2rem;
+}
+
+
+input{
+  border: 3px solid var(--color600);
+  color: var(--color600);
+  font: inherit;
+  
+  &:focus-visible{
+    outline: 2px dotted var(--color400);
+    outline-offset: 3px;
+  }
+  &:invalid{
+    outline: 2px solid red;
+    outline-offset: 3px;
+  }
+}
+
+button{
+  background-color: var(--color600);
+  color: var(--color200);
+  font: inherit;
+  border: 0;
+  padding: 0.5rem 1rem;
+  &:focus-visible{
+    outline: 2px dotted var(--color400);
+    outline-offset: 3px;
+  }
+  &:hover{
+    filter: brightness(1.5);
+    cursor: pointer;
+  }
+  &:active{
+    scale: 95%;
+  }
+}
