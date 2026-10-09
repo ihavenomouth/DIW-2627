@@ -1,17 +1,21 @@
 "use strict";
 
 
-const ulResultado = document.querySelector("#resultado");
-const txtTarea = document.querySelector("#txtTarea");
+function anadirTarea(){
+  const txtTarea = document.querySelector("#txtTarea");
+  const textoTarea = txtTarea.value;
+  
+  const UlResultado = document.querySelector("#resultado");  
+  
+  UlResultado.innerHTML += `<li>${textoTarea}</li>`;
+
+}
+
+
+
 const btnAnadirTarea = document.querySelector("#btnAnadirTarea");
 
 
+btnAnadirTarea.addEventListener("click", anadirTarea);
 
 
-
-btnAnadirTarea.addEventListener("click", e=>{
-  const tarea = txtTarea.value;
-
-  ulResultado.innerHTML += `<li>${tarea}</li>`
-
-});
