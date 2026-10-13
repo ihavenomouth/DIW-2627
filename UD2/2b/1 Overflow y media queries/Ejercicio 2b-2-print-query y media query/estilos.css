@@ -136,7 +136,29 @@ button:hover {
 /* =========================================================
    Media query para impresión con ahorro de tinta de impresora
    ========================================================= */
+@media print{
+  body, form, input, select{
+    background: none !important;
+    background-color: white !important;
+    box-shadow: none;
+  }
 
+  form{
+    border: 0;
+  }
+
+  main{
+    max-width: unset;
+  }
+
+  h1, h2, h3, label, a, input, select{
+    color: #333 !important; 
+  }
+
+  button{
+    display:none;
+  }
+}
 
 
 /* =========================================================
