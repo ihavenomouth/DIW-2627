@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Registro</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <main>
+    <form>
+      <h2>Formulario de Registro</h2>
+
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Introduce tu nombre" required>
+
+      <label for="edad">Edad</label>
+      <input type="number" id="edad" name="edad" min="0" max="120" placeholder="Introduce tu edad" required>
+
+      <label for="telefono">Número de teléfono</label>
+      <input type="tel" id="telefono" name="telefono" placeholder="Introduce tu teléfono" required>
+
+      <label for="turno">Turno</label>
+      <select id="turno" name="turno">
+        <option value="indiferente" selected>Indiferente</option>
+        <option value="manana">Mañana</option>
+        <option value="tarde">Tarde</option>
+      </select>
+
+      <label>
+        <input type="checkbox" id="privacidad" name="privacidad" required>
+        Acepto la <a href="https://www.example.com" target="_blank" rel="noopener noreferrer">política de privacidad</a>
+      </label>
+
+      <button type="button" id="btn-imprimir">Imprimir</button>
+    </form>
+  </main>
+
+  <script>
+    document.getElementById('btn-imprimir').addEventListener('click', () => {
+      window.print();
+    });
+  </script>
+</body>
+</html>

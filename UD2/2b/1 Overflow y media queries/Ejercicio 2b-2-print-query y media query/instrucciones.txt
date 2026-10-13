@@ -1,0 +1,18 @@
+Crea una web que conste de un formulario con los siguientes controles:
+- nombre
+- edad
+- número de teléfono
+- un select para elegir turno (Indiferente (por defecto), Mañana, Tarde)
+- un checkbox de "Acepto la política de privacidad". "Política de privacidad" será un enlace a www.example.com.
+- un botón con la etiqueta imprimir
+
+
+Estila los elementos sin utilizar muchas clases. 
+
+Usa etiquetas semánticas cuando sea posible.
+
+El tema de la web será oscuro. Elige colores de fondo y acento adecuados.
+
+Añade al final del fichero de estilos.css una media query que prepare los elementos para que se puedan imprimir gastando poca tinta de impresora.
+
+Haz que cuando se pulse el botón de imprimir se muestre el diálogo del navegador de imprimir.

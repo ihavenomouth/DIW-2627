@@ -1,0 +1,213 @@
+/* Estilos generales y tema oscuro */
+:root {
+  --bg-color: #121212;
+  --form-bg: #1e1e1e;
+  --text-color: #f1f1f1;
+  --border-color: #3a3a3a;
+  --primary-color: #ea6;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui,'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+main {
+  width: 100%;
+  max-width: 480px;
+}
+
+form {
+  background-color: var(--form-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+  color: var(--primary-color);
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+
+/* Checkbox alineado horizontalmente con su texto */
+label:has(input[type="checkbox"]) {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+select {
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text-color);
+  padding: 0.65rem 0.85rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  appearance: textfield;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
+input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: var(--primary-color);
+  cursor: pointer;
+}
+
+select {
+  cursor: pointer;
+}
+
+option {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  filter:brightness(1.1);
+}
+
+
+
+/* =========================================================
+   Media query para impresión con ahorro de tinta de impresora
+   ========================================================= */
+@media print {
+  * {
+    background: transparent !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    display: block;
+    padding: 0;
+  }
+
+  main {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  form {
+    border: none;
+    border-radius: 0;
+    padding: 1.5rem;
+    box-shadow: none;
+  }
+
+  h2{
+    color: black;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  input[type="tel"],
+  select {
+    border: 1px solid #666;
+    border-radius: 0;
+    background: #ffffff !important;
+    color: #000000 !important;
+    appearance: textfield;
+  }
+
+  input[type="checkbox"]{
+    accent-color: #666;
+  }
+
+  a {
+    color: #000000 !important;
+    text-decoration: underline;
+  }
+
+  /* Ocultar el botón para no gastar tinta innecesariamente */
+  button {
+    display: none !important;
+  }
+}
+
+
+
+/* =========================================================
+   Media query para móviles
+   ========================================================= */
+   
+   @media screen and (width<40rem){
+    main{
+      max-width: 100%;
+    }
+    h2{
+      font-size: 1.5rem;
+    }
+    select + label{
+      display:block;
+    }
+   }

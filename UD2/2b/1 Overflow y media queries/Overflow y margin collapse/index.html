@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Overflow y margin collapse</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Overflow y margin collapse</h1>
+  </header>
+
+  <section>
+    <h2>Overflow</h2>
+    <p>Aunque el tamaño de un elemento suele estar limitado por el tamaño de su elemento padre, en ocasiones puede sobresalir del tamaño del padre. Este mismo párrafo tiene por defecto un tamaño tal que no puede superar el tamaño del padre.</p>
+
+    <p>Sin embargo podemos ver en este segundo párrafo que al haber una palabra muy larga (que se ha destacado en gris y cursiva): <em>se_produce_inevitablemente_un_overflow_o_desbordamiento_supercalifragilísticoespialidososilodicesconsolturasonaráarmoniososupercalifragilisticoespialidoso.</em> Puedes jugar en las Developer tools con diferentes opciones para la propiedad <code>overflow</code> y <code>overflow-wrap</code> para ver los diferentes efectos.</p>
+
+    <p>Este efecto se puede conseguir más fácilmente usado un bloque <code>&lt;pre&gt;</code> proque se respetan los espacios y retornos de carro.</p>
+    
+    
+    <div class="pre-box">
+      <pre>
+    .pre-box pre {
+      width: 270px;
+      margin: 0;
+      padding: 8px;
+      background-color: #eeeeeeff;
+    }</pre>
+    </div>
+    
+
+
+    <h3>El margen del hijo supera al del padre</h3>
+    <p>Otro ejemplo de overflow algo más extraño es el de los márgenes de un hijo que supera el del padre.</p>
+
+    <p>Esto puedes verlo en el <code>&lt;h1&gt;</code> de esta misma web. Su <code>margin</code> (el margen por defecto, porque no se ha modificado en el CSS) supera al margen del <code>&lt;header&gt;</code>, que se ha establecido en el CSS como <code>margin:0;</code>. Puedes comprobarlo usando las Developer tools y agregando la propiedad <code>margin:0;</code> al encabezado <code>&lt;h1&gt;</code>.</p>
+
+    <p>Esta es una de las razones por las que en muchos ficheros CSS puedes ver como regla inicial la siguiente:</p>
+    <pre>
+      *,::after,::before{
+        box-sizing:border-box;
+        margin: 0;
+        padding:0;
+      }</pre>
+    <p>Así se evitan posibles problemas que podamos encontrar con diferencias entre las hojas de estilos por defecto de diferentes navegadores.</p>
+    
+    <p>En realidad también está relacionado con el <em>margin collapse</em> que trataremos más abajo. <br>
+    Cuando un elemento contenedor (como <code>&lt;header&gt;</code>) no tiene <code>padding</code>, <code>border</code> o contenido que lo aísle, el margen de su primer hijo (o el inferior de su último hijo, como el <code>&lt;h1&gt;</code>) colapsa con el margen del propio contenedor.</p>
+
+    <h3>Una imagen más grande que su caja</h3>
+
+    <p>En este caso, en lugar de utilizar texto, vamos a ver imágenes y cómo puede afectar el desbordamiento.<br>
+    Las divisiones de abajo tienen un ancho fijo de <code>200px</code> y un alto de <code>100px</code> (para que se vea se ha añadido un borde gris claro que se coloca por encima de sus hijos). Las imágenes tiene un ancho de <code>260px</code> y un alto de <code>170px</code> (no caben).
+    
+    <p>Tanto las divisiones que contienen las imágenes como las propias imágenes tienen combinaciones diferentes de propiedades. Se ha indicado en el atributo <code>title</code> de las imágenes, así puedes verlas dejando el ratón encima de cada una.
+    </p>
+
+    <p><strong>Nota: </strong> para mejorar la visibilidad de la barra de desplazamiento se ha añadido al <code>&lt;body&gt;</code> la siguiente propiedad: <code>scrollbar-color: black lightgray;</code>.</p>
+
+    <div class="dos-columnas">
+      <div class="image-box" title="Se produce el overflow, no se limita de ninguna manera.">
+        <img src="monroylab.png" alt="Logotipo de MonroyLab">
+      </div>
+      
+      <div class="image-box" style="overflow:clip;" title="Se usa overflow:clip en la división. Se corta la parte sobrante de la imagen.">
+        <img src="monroylab.png" alt="Logotipo de MonroyLab">
+      </div>
+
+      <div class="image-box" style="overflow:auto;" title="Se usa overflow:auto en la división. Aparecen barras de scroll.">
+        <img src="monroylab.png" alt="Logotipo de MonroyLab">
+      </div>
+
+
+      <div class="image-box" title="No se hace nada en la división, pero a la imagen se le aplica un width:100%, el ancho se limita al ancho del contenedor, el alto no para mantener la relación de aspecto.">
+        <img src="monroylab.png" alt="Logotipo de MonroyLab" style="width: 100%;">
+      </div>
+
+
+      <div class="image-box" title="No se hace nada en la división, pero a la imagen se le aplica un width:100%;height:100%, se limita el ancho y el alto de la imagen, lo que cambia la relación de aspecto (comprime la imagen).">
+        <img src="monroylab.png" alt="Logotipo de MonroyLab" style="width:100%;height:100%;">
+      </div>
+
+      <div class="image-box" title="No se hace nada en la división, pero a la imagen se le aplica un height:100%, se limita el alto de la imagen y al mantenerse la relación de aspecto, se limita automáticamente también el ancho, por lo que sobra espacio en la división.">
+          <img src="monroylab.png" alt="Logotipo de MonroyLab" style="height:100%;">
+      </div>
+    </div>
+
+  </section>
+
+  <section>
+    <h2>Margin collapse</h2>
+    <p>Dos márgenes verticales contiguos colapsan, es decir, se aplica el mayor, no se suman. Esto puede resultar poco intuitivo y puede estropear un diseño.</p>
+
+    <p>En el ejemplo de abajo tenemos dos divisiones con márgenes de <code>40px</code> y <code>60px</code> respectivamente, como son contiguos podríamos pensar que la distancia entre las dos divisiones será de <code>100px</code>, pero en realidad será de sólo <code>60px</code>.</p>
+    
+    <p><strong>Nota:</strong> los márgenes se han representado visualmente usando un <code>outline</code> y <code>outline-offset</code>.</p>
+    <br>
+
+    <div class="block first">margin: 40px</div>
+    <div class="block second">margin: 60px</div>
+    <br>
+    <p>Como se puede ver en el ejemplo de arriba, el espacio visible entre los bloques es de <code>60px</code>, no de los <code>100px</code> que podríamos esperar.</p>
+  </section>
+</body>
+</html>
