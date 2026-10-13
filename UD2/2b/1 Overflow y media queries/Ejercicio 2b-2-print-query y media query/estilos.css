@@ -136,63 +136,6 @@ button:hover {
 /* =========================================================
    Media query para impresión con ahorro de tinta de impresora
    ========================================================= */
-@media print {
-  * {
-    background: transparent !important;
-    color: #000000 !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
-  body {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-    display: block;
-    padding: 0;
-  }
-
-  main {
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-
-  form {
-    border: none;
-    border-radius: 0;
-    padding: 1.5rem;
-    box-shadow: none;
-  }
-
-  h2{
-    color: black;
-  }
-
-  input[type="text"],
-  input[type="number"],
-  input[type="tel"],
-  select {
-    border: 1px solid #666;
-    border-radius: 0;
-    background: #ffffff !important;
-    color: #000000 !important;
-    appearance: textfield;
-  }
-
-  input[type="checkbox"]{
-    accent-color: #666;
-  }
-
-  a {
-    color: #000000 !important;
-    text-decoration: underline;
-  }
-
-  /* Ocultar el botón para no gastar tinta innecesariamente */
-  button {
-    display: none !important;
-  }
-}
 
 
 
@@ -200,14 +143,3 @@ button:hover {
    Media query para móviles
    ========================================================= */
    
-   @media screen and (width<40rem){
-    main{
-      max-width: 100%;
-    }
-    h2{
-      font-size: 1.5rem;
-    }
-    select + label{
-      display:block;
-    }
-   }
