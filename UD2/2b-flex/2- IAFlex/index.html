@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Interactivo | Guía Visual y Práctica de CSS Flexbox</title>
+  <meta name="description" content="Aprende CSS Flexbox paso a paso con ejemplos interactivos, laboratorio en vivo, retos prácticos y chuleta de referencia.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo">
+        <span class="logo-icon">📦</span>
+        <span class="logo-text">Flexbox<strong>Lab</strong></span>
+      </div>
+      <nav class="main-nav">
+        <a href="#ejes" class="nav-link">Ejes</a>
+        <a href="#contenedor" class="nav-link">Contenedor</a>
+        <a href="#items" class="nav-link">Elementos (Items)</a>
+        <a href="#sandbox" class="nav-link highlight">Laboratorio Vivo</a>
+        <a href="#retos" class="nav-link">Retos</a>
+        <a href="#chuleta" class="nav-link">Chuleta</a>
+      </nav>
+      <div class="header-actions">
+        <a href="#sandbox" class="btn btn-sm btn-primary">Ir al Playground</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-content">
+      <span class="badge badge-accent">Aprende CSS Moderno</span>
+      <h1 class="hero-title">Domina <span>CSS Flexbox</span> de forma visual e interactiva</h1>
+      <p class="hero-subtitle">
+        Olvídate de memorizar reglas sin sentido. Experimenta en tiempo real cómo se comportan los contenedores, 
+        los ejes principales y cruzados, y cómo distribuir elementos de forma elegante y adaptable.
+      </p>
+      <div class="hero-cta">
+        <a href="#ejes" class="btn btn-primary">Empezar a aprender ↓</a>
+        <a href="#sandbox" class="btn btn-outline">Probar en el Sandbox ⚡</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="main-wrapper">
+
+
+    <!-- 1. CONCEPTO DE EJES Y DISPLAY: FLEX -->
+    <section id="ejes" class="content-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">01. Fundamentos</span>
+          <h2>El Modelo de Cajas y los Ejes de Flexbox</h2>
+          <p>
+            Al aplicar <code>display: flex</code> a un elemento padre, este se convierte en un <strong>Flex Container</strong> 
+            y sus hijos directos pasan a ser <strong>Flex Items</strong>. La clave de Flexbox radica en sus dos ejes:
+          </p>
+        </div>
+
+        <div class="axis-explainer-card">
+          <div class="axis-controls">
+            <label>Prueba cambiar <code>flex-direction</code> para ver la rotación de los ejes:</label>
+            <div class="button-group" id="axis-direction-btns">
+              <button class="chip-btn active" data-dir="row">row (por defecto)</button>
+              <button class="chip-btn" data-dir="row-reverse">row-reverse</button>
+              <button class="chip-btn" data-dir="column">column</button>
+              <button class="chip-btn" data-dir="column-reverse">column-reverse</button>
+            </div>
+          </div>
+
+          <div class="axis-diagram" id="axis-diagram">
+            <div class="axis-indicator main-axis" id="main-axis-indicator">
+              <span class="axis-label" id="main-axis-label">Eje Principal (Main Axis) ➔</span>
+            </div>
+            <div class="axis-indicator cross-axis" id="cross-axis-indicator">
+              <span class="axis-label" id="cross-axis-label">Eje Cruzado (Cross Axis) ➔</span>
+            </div>
+
+            <div class="axis-box-container" id="axis-preview-container">
+              <div class="axis-item item-1">1</div>
+              <div class="axis-item item-2">2</div>
+              <div class="axis-item item-3">3</div>
+            </div>
+          </div>
+
+          <div class="axis-info-grid">
+            <div class="info-card">
+              <h4>🎯 Eje Principal (Main Axis)</h4>
+              <p>Es la dirección en la que fluyen los elementos. Se controla con <code>justify-content</code>. En <code>row</code> va de izquierda a derecha; en <code>column</code> va de arriba a abajo.</p>
+            </div>
+            <div class="info-card">
+              <h4>📐 Eje Cruzado (Cross Axis)</h4>
+              <p>Es el eje perpendicular al principal. Se controla con <code>align-items</code> y <code>align-content</code>. Permite alinear los elementos transversalmente.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. PROPIEDADES DEL CONTENEDOR -->
+    <section id="contenedor" class="content-section bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">02. Propiedades del Padre</span>
+          <h2>Propiedades del Contenedor (Flex Container)</h2>
+          <p>Estas propiedades se aplican al elemento que tiene <code>display: flex</code> y afectan a cómo se organizan todos sus hijos.</p>
+        </div>
+
+        <!-- Mini-Playgrounds por propiedad -->
+        <div class="feature-grid">
+
+          <!-- 2.1 flex-direction -->
+          <div class="interactive-card">
+            <div class="card-header">
+              <div>
+                <h3>flex-direction</h3>
+                <p>Define la orientación del eje principal y el sentido en el que se colocan los hijos.</p>
+              </div>
+              <span class="css-pill">flex-direction</span>
+            </div>
+            <div class="card-controls">
+              <div class="chip-row" data-target="demo-direction" data-prop="flexDirection">
+                <button class="chip-btn active" data-val="row">row</button>
+                <button class="chip-btn" data-val="row-reverse">row-reverse</button>
+                <button class="chip-btn" data-val="column">column</button>
+                <button class="chip-btn" data-val="column-reverse">column-reverse</button>
+              </div>
+            </div>
+            <div class="demo-stage" id="demo-direction" style="flex-direction: row; min-height: 140px;">
+              <div class="flex-item c-1">1</div>
+              <div class="flex-item c-2">2</div>
+              <div class="flex-item c-3">3</div>
+              <div class="flex-item c-4">4</div>
+            </div>
+            <div class="code-snippet">
+              <code id="code-direction">flex-direction: row;</code>
+            </div>
+          </div>
+
+          <!-- 2.2 justify-content -->
+          <div class="interactive-card">
+            <div class="card-header">
+              <div>
+                <h3>justify-content</h3>
+                <p>Alinea los elementos a lo largo del <strong>eje principal</strong> (distribuye el espacio libre sobrante).</p>
+              </div>
+              <span class="css-pill">justify-content</span>
+            </div>
+            <div class="card-controls">
+              <div class="chip-row" data-target="demo-justify" data-prop="justifyContent">
+                <button class="chip-btn active" data-val="flex-start">flex-start</button>
+                <button class="chip-btn" data-val="center">center</button>
+                <button class="chip-btn" data-val="flex-end">flex-end</button>
+                <button class="chip-btn" data-val="space-between">space-between</button>
+                <button class="chip-btn" data-val="space-around">space-around</button>
+                <button class="chip-btn" data-val="space-evenly">space-evenly</button>
+              </div>
+            </div>
+            <div class="demo-stage" id="demo-justify" style="justify-content: flex-start;">
+              <div class="flex-item c-1">1</div>
+              <div class="flex-item c-2">2</div>
+              <div class="flex-item c-3">3</div>
+            </div>
+            <div class="code-snippet">
+              <code id="code-justify">justify-content: flex-start;</code>
+            </div>
+          </div>
+
+          <!-- 2.3 align-items -->
+          <div class="interactive-card">
+            <div class="card-header">
+              <div>
+                <h3>align-items</h3>
+                <p>Alinea los elementos a lo largo del <strong>eje cruzado</strong> (perpendicular al principal).</p>
+              </div>
+              <span class="css-pill">align-items</span>
+            </div>
+            <div class="card-controls">
+              <div class="chip-row" data-target="demo-align-items" data-prop="alignItems">
+                <button class="chip-btn active" data-val="stretch">stretch</button>
+                <button class="chip-btn" data-val="flex-start">flex-start</button>
+                <button class="chip-btn" data-val="center">center</button>
+                <button class="chip-btn" data-val="flex-end">flex-end</button>
+                <button class="chip-btn" data-val="baseline">baseline</button>
+              </div>
+            </div>
+            <div class="demo-stage fixed-height" id="demo-align-items" style="align-items: stretch;">
+              <div class="flex-item c-1" style="font-size: 1rem; padding: 10px;">1 (normal)</div>
+              <div class="flex-item c-2" style="font-size: 1.8rem; padding: 14px;">2 (grande)</div>
+              <div class="flex-item c-3" style="font-size: 0.85rem; padding: 8px;">3 (pequeño)</div>
+            </div>
+            <div class="code-snippet">
+              <code id="code-align-items">align-items: stretch;</code>
+            </div>
+          </div>
+
+          <!-- 2.4 flex-wrap & align-content -->
+          <div class="interactive-card">
+            <div class="card-header">
+              <div>
+                <h3>flex-wrap & align-content</h3>
+                <p>Permite que los elementos salten a múltiples líneas cuando no caben en una sola fila/columna.</p>
+              </div>
+              <span class="css-pill">flex-wrap</span>
+            </div>
+            <div class="card-controls wrap-controls">
+              <div>
+                <label class="control-mini-label">flex-wrap:</label>
+                <div class="chip-row" id="wrap-choice-btns">
+                  <button class="chip-btn" data-val="nowrap">nowrap</button>
+                  <button class="chip-btn active" data-val="wrap">wrap</button>
+                  <button class="chip-btn" data-val="wrap-reverse">wrap-reverse</button>
+                </div>
+              </div>
+              <div>
+                <label class="control-mini-label">align-content (solo multilínea):</label>
+                <div class="chip-row" id="align-content-choice-btns">
+                  <button class="chip-btn active" data-val="stretch">stretch</button>
+                  <button class="chip-btn" data-val="flex-start">flex-start</button>
+                  <button class="chip-btn" data-val="center">center</button>
+                  <button class="chip-btn" data-val="flex-end">flex-end</button>
+                  <button class="chip-btn" data-val="space-between">space-between</button>
+                </div>
+              </div>
+            </div>
+            <div class="demo-stage fixed-height" id="demo-wrap" style="flex-wrap: wrap; align-content: stretch;">
+              <div class="flex-item c-1 w-item">1</div>
+              <div class="flex-item c-2 w-item">2</div>
+              <div class="flex-item c-3 w-item">3</div>
+              <div class="flex-item c-4 w-item">4</div>
+              <div class="flex-item c-5 w-item">5</div>
+              <div class="flex-item c-6 w-item">6</div>
+            </div>
+            <div class="code-snippet">
+              <code id="code-wrap">flex-wrap: wrap; align-content: stretch;</code>
+            </div>
+          </div>
+
+          <!-- 2.5 gap -->
+          <div class="interactive-card full-width-card">
+            <div class="card-header">
+              <div>
+                <h3>gap (Espaciado Inteligente)</h3>
+                <p>Establece la separación limpia entre elementos sin necesidad de márgenes negativos ni trucos.</p>
+              </div>
+              <span class="css-pill">gap</span>
+            </div>
+            <div class="card-controls gap-controls">
+              <div class="slider-group">
+                <label for="gap-slider">Distancia del hueco: <strong id="gap-val-display">16px</strong></label>
+                <input type="range" id="gap-slider" min="0" max="48" value="16" step="4">
+              </div>
+            </div>
+            <div class="demo-stage" id="demo-gap" style="gap: 16px; flex-wrap: wrap;">
+              <div class="flex-item c-1">Item 1</div>
+              <div class="flex-item c-2">Item 2</div>
+              <div class="flex-item c-3">Item 3</div>
+              <div class="flex-item c-4">Item 4</div>
+            </div>
+            <div class="code-snippet">
+              <code id="code-gap">gap: 16px;</code>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PROPIEDADES DE LOS ITEMS -->
+    <section id="items" class="content-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">03. Propiedades de los Hijos</span>
+          <h2>Propiedades de los Elementos (Flex Items)</h2>
+          <p>Se aplican a los elementos individuales para controlar cómo crecen, se encogen o se alinean de forma independiente.</p>
+        </div>
+
+        <div class="items-interactive-wrapper">
+          <div class="items-selector-bar">
+            <span>Selecciona un elemento para editar sus propiedades:</span>
+            <div class="item-tabs" id="item-tabs">
+              <button class="item-tab-btn active" data-item="1">Elemento 1 (Azul)</button>
+              <button class="item-tab-btn" data-item="2">Elemento 2 (Violeta)</button>
+              <button class="item-tab-btn" data-item="3">Elemento 3 (Verde)</button>
+            </div>
+          </div>
+
+          <div class="items-dashboard">
+            <div class="items-controls-panel">
+              <h4 id="selected-item-title">Editando: Elemento 1</h4>
+              
+              <!-- flex-grow -->
+              <div class="control-box">
+                <div class="control-header-row">
+                  <label><code>flex-grow</code> (Factor de crecimiento)</label>
+                  <span class="control-val-badge" id="val-grow">0</span>
+                </div>
+                <input type="range" id="slider-grow" min="0" max="5" value="0" step="1">
+                <small class="helper-text">Proporción de espacio sobrante que absorberá este elemento.</small>
+              </div>
+
+              <!-- flex-shrink -->
+              <div class="control-box">
+                <div class="control-header-row">
+                  <label><code>flex-shrink</code> (Factor de encogimiento)</label>
+                  <span class="control-val-badge" id="val-shrink">1</span>
+                </div>
+                <input type="range" id="slider-shrink" min="0" max="5" value="1" step="1">
+                <small class="helper-text">Capacidad de encogerse cuando el espacio del contenedor no sea suficiente.</small>
+              </div>
+
+              <!-- flex-basis -->
+              <div class="control-box">
+                <div class="control-header-row">
+                  <label><code>flex-basis</code> (Tamaño base inicial)</label>
+                  <span class="control-val-badge" id="val-basis">auto</span>
+                </div>
+                <div class="chip-row" id="basis-chips">
+                  <button class="chip-btn active" data-basis="auto">auto</button>
+                  <button class="chip-btn" data-basis="100px">100px</button>
+                  <button class="chip-btn" data-basis="200px">200px</button>
+                  <button class="chip-btn" data-basis="0">0</button>
+                </div>
+              </div>
+
+              <!-- align-self -->
+              <div class="control-box">
+                <div class="control-header-row">
+                  <label><code>align-self</code> (Sobrescribe align-items)</label>
+                </div>
+                <div class="chip-row" id="align-self-chips">
+                  <button class="chip-btn active" data-self="auto">auto</button>
+                  <button class="chip-btn" data-self="flex-start">flex-start</button>
+                  <button class="chip-btn" data-self="center">center</button>
+                  <button class="chip-btn" data-self="flex-end">flex-end</button>
+                  <button class="chip-btn" data-self="stretch">stretch</button>
+                </div>
+              </div>
+
+              <!-- order -->
+              <div class="control-box">
+                <div class="control-header-row">
+                  <label><code>order</code> (Orden visual)</label>
+                  <span class="control-val-badge" id="val-order">0</span>
+                </div>
+                <input type="range" id="slider-order" min="-2" max="3" value="0" step="1">
+                <small class="helper-text">Valores más bajos aparecen primero (por defecto es 0).</small>
+              </div>
+            </div>
+
+            <div class="items-preview-area">
+              <div class="stage-container fixed-height" id="stage-items">
+                <div class="flex-item-custom c-1 selected" id="custom-item-1">
+                  <div class="item-tag">Item 1</div>
+                  <div class="item-meta" id="meta-1">grow:0 | order:0</div>
+                </div>
+                <div class="flex-item-custom c-2" id="custom-item-2">
+                  <div class="item-tag">Item 2</div>
+                  <div class="item-meta" id="meta-2">grow:0 | order:0</div>
+                </div>
+                <div class="flex-item-custom c-3" id="custom-item-3">
+                  <div class="item-tag">Item 3</div>
+                  <div class="item-meta" id="meta-3">grow:0 | order:0</div>
+                </div>
+              </div>
+
+              <div class="code-snippet-box">
+                <div class="code-header">
+                  <span>CSS del elemento seleccionado</span>
+                  <button class="btn-copy" id="btn-copy-item-css">Copiar CSS</button>
+                </div>
+                <pre><code id="code-item-css">.item-1 {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. EL GRAN LABORATORIO VIVO (SANDBOX MAESTRO) -->
+    <section id="sandbox" class="content-section bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">04. Playground Completo</span>
+          <h2>El Laboratorio Interactivo Total</h2>
+          <p>Combina todas las propiedades del contenedor y los elementos simultáneamente. Observa el resultado visual y copia el código generado.</p>
+        </div>
+
+        <div class="sandbox-container">
+          <!-- Controles a la izquierda -->
+          <div class="sandbox-controls">
+            <div class="sandbox-control-group">
+              <div class="group-title">
+                <span>Contenedor (.container)</span>
+                <button class="btn btn-xs btn-outline" id="btn-reset-sandbox">Restablecer</button>
+              </div>
+
+              <div class="form-row">
+                <label>flex-direction:</label>
+                <select id="sb-direction" class="custom-select">
+                  <option value="row" selected>row</option>
+                  <option value="row-reverse">row-reverse</option>
+                  <option value="column">column</option>
+                  <option value="column-reverse">column-reverse</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <label>justify-content:</label>
+                <select id="sb-justify" class="custom-select">
+                  <option value="flex-start" selected>flex-start</option>
+                  <option value="center">center</option>
+                  <option value="flex-end">flex-end</option>
+                  <option value="space-between">space-between</option>
+                  <option value="space-around">space-around</option>
+                  <option value="space-evenly">space-evenly</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <label>align-items:</label>
+                <select id="sb-align-items" class="custom-select">
+                  <option value="stretch" selected>stretch</option>
+                  <option value="flex-start">flex-start</option>
+                  <option value="center">center</option>
+                  <option value="flex-end">flex-end</option>
+                  <option value="baseline">baseline</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <label>flex-wrap:</label>
+                <select id="sb-wrap" class="custom-select">
+                  <option value="nowrap" selected>nowrap</option>
+                  <option value="wrap">wrap</option>
+                  <option value="wrap-reverse">wrap-reverse</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <label>align-content:</label>
+                <select id="sb-align-content" class="custom-select">
+                  <option value="stretch" selected>stretch</option>
+                  <option value="flex-start">flex-start</option>
+                  <option value="center">center</option>
+                  <option value="flex-end">flex-end</option>
+                  <option value="space-between">space-between</option>
+                  <option value="space-around">space-around</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <label>gap: <span id="sb-gap-val">12px</span></label>
+                <input type="range" id="sb-gap" min="0" max="40" value="12" step="2">
+              </div>
+
+              <div class="form-row items-manager">
+                <label>Elementos en escena:</label>
+                <div class="button-group">
+                  <button class="btn btn-sm btn-secondary" id="sb-add-item">+ Añadir Ítem</button>
+                  <button class="btn btn-sm btn-secondary" id="sb-remove-item">- Quitar</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Controles del elemento individual dentro del sandbox -->
+            <div class="sandbox-control-group">
+              <div class="group-title">
+                <span>Ítem Seleccionado: <strong id="sb-active-item-name">#1</strong></span>
+              </div>
+              <p class="small-hint">Haz clic en cualquier caja de la derecha para seleccionarla y modificarla.</p>
+
+              <div class="form-row">
+                <label>flex-grow: <span id="sb-item-grow-val">0</span></label>
+                <input type="range" id="sb-item-grow" min="0" max="5" value="0">
+              </div>
+
+              <div class="form-row">
+                <label>flex-shrink: <span id="sb-item-shrink-val">1</span></label>
+                <input type="range" id="sb-item-shrink" min="0" max="5" value="1">
+              </div>
+
+              <div class="form-row">
+                <label>align-self:</label>
+                <select id="sb-item-align-self" class="custom-select">
+                  <option value="auto" selected>auto</option>
+                  <option value="flex-start">flex-start</option>
+                  <option value="center">center</option>
+                  <option value="flex-end">flex-end</option>
+                  <option value="stretch">stretch</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <label>order: <span id="sb-item-order-val">0</span></label>
+                <input type="range" id="sb-item-order" min="-3" max="5" value="0">
+              </div>
+            </div>
+          </div>
+
+          <!-- Escenario visual y código -->
+          <div class="sandbox-view">
+            <div class="sandbox-screen-header">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <span class="screen-title">Vista previa interactiva</span>
+            </div>
+
+            <div class="sandbox-canvas" id="sandbox-canvas">
+              <!-- Items generados dinámicamente -->
+            </div>
+
+            <!-- Código generado -->
+            <div class="generated-code-card">
+              <div class="code-header">
+                <span>CSS Generado en Vivo</span>
+                <button class="btn-copy" id="btn-copy-sandbox-css">Copiar CSS</button>
+              </div>
+              <pre><code id="sandbox-css-output">.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  gap: 12px;
+}</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. RETOS PRÁCTICOS -->
+    <section id="retos" class="content-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">05. Practica lo aprendido</span>
+          <h2>Desafíos y Retos Interactivos</h2>
+          <p>Pon a prueba tus habilidades resolviendo problemas comunes del diseño web real con Flexbox.</p>
+        </div>
+
+        <div class="challenges-tabs">
+          <button class="challenge-tab active" data-challenge="1">Reto 1: El Centrado Absoluto</button>
+          <button class="challenge-tab" data-challenge="2">Reto 2: Barra de Navegación</button>
+          <button class="challenge-tab" data-challenge="3">Reto 3: Fila de Tarjetas Adaptable</button>
+        </div>
+
+        <div class="challenge-board" id="challenge-board">
+          <!-- Contenido dinámico del reto -->
+          <div class="challenge-info">
+            <h3 id="ch-title">Reto 1: El Santo Grial del Centrado</h3>
+            <p id="ch-desc">
+              Uno de los mayores dolores de cabeza en el CSS antiguo era centrar un elemento tanto horizontal como verticalmente. 
+              Con Flexbox se logra con solo 2 propiedades. ¡Ajústalas para centrar el corazón en la diana!
+            </p>
+            <div class="challenge-controls" id="ch-controls">
+              <!-- Controles del reto inyectados por JS -->
+            </div>
+            <div class="challenge-feedback" id="ch-feedback">
+              <span class="status-msg">Selecciona las propiedades correctas...</span>
+            </div>
+            <div class="challenge-actions">
+              <button class="btn btn-sm btn-primary" id="btn-verify-challenge">Comprobar Solución</button>
+              <button class="btn btn-sm btn-outline" id="btn-solution-challenge">Ver Pista / Solución</button>
+            </div>
+          </div>
+
+          <div class="challenge-stage-wrapper">
+            <div class="challenge-stage" id="ch-stage">
+              <!-- Items del reto inyectados por JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CHULETA RÁPIDA (CHEATSHEET) -->
+    <section id="chuleta" class="content-section bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">06. Referencia Rápida</span>
+          <h2>Chuleta Completa de CSS Flexbox</h2>
+          <p>Guarda esta tabla para consultarla rápidamente en tus proyectos.</p>
+        </div>
+
+        <div class="cheatsheet-table-wrapper">
+          <table class="cheatsheet-table">
+            <thead>
+              <tr>
+                <th>Propiedad</th>
+                <th>Se aplica a</th>
+                <th>Valores principales</th>
+                <th>Descripción y uso clave</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>display</code></td>
+                <td><span class="badge badge-parent">Contenedor</span></td>
+                <td><code>flex | inline-flex</code></td>
+                <td>Habilita el contexto flex para todos los hijos directos.</td>
+              </tr>
+              <tr>
+                <td><code>flex-direction</code></td>
+                <td><span class="badge badge-parent">Contenedor</span></td>
+                <td><code>row | row-reverse | column | column-reverse</code></td>
+                <td>Establece el eje principal y la orientación del flujo.</td>
+              </tr>
+              <tr>
+                <td><code>justify-content</code></td>
+                <td><span class="badge badge-parent">Contenedor</span></td>
+                <td><code>flex-start | center | flex-end | space-between | space-around | space-evenly</code></td>
+                <td>Distribuye los elementos y el espacio libre a lo largo del eje principal.</td>
+              </tr>
+              <tr>
+                <td><code>align-items</code></td>
+                <td><span class="badge badge-parent">Contenedor</span></td>
+                <td><code>stretch | flex-start | center | flex-end | baseline</code></td>
+                <td>Alinea los elementos a lo largo del eje perpendicular (cruzado).</td>
+              </tr>
+              <tr>
+                <td><code>flex-wrap</code></td>
+                <td><span class="badge badge-parent">Contenedor</span></td>
+                <td><code>nowrap | wrap | wrap-reverse</code></td>
+                <td>Permite o prohíbe que los elementos salten de línea cuando no caben.</td>
+              </tr>
+              <tr>
+                <td><code>align-content</code></td>
+                <td><span class="badge badge-parent">Contenedor</span></td>
+                <td><code>stretch | flex-start | center | flex-end | space-between | space-around</code></td>
+                <td>Alinea las líneas completas entre sí (solo funciona si <code>flex-wrap: wrap</code> tiene más de 1 fila).</td>
+              </tr>
+              <tr>
+                <td><code>gap</code></td>
+                <td><span class="badge badge-parent">Contenedor</span></td>
+                <td><code>&lt;longitud&gt; (ej: 16px, 1rem)</code></td>
+                <td>Establece el espacio entre elementos (atajo para row-gap y column-gap).</td>
+              </tr>
+              <tr>
+                <td><code>flex-grow</code></td>
+                <td><span class="badge badge-child">Elemento Hijo</span></td>
+                <td><code>&lt;número&gt; (ej: 0, 1, 2)</code></td>
+                <td>Define la proporción de espacio sobrante que absorbe este ítem relativo a los demás.</td>
+              </tr>
+              <tr>
+                <td><code>flex-shrink</code></td>
+                <td><span class="badge badge-child">Elemento Hijo</span></td>
+                <td><code>&lt;número&gt; (ej: 1, 0)</code></td>
+                <td>Define la capacidad de encogerse si no hay espacio suficiente (0 = no se encoge).</td>
+              </tr>
+              <tr>
+                <td><code>flex-basis</code></td>
+                <td><span class="badge badge-child">Elemento Hijo</span></td>
+                <td><code>auto | &lt;longitud&gt; (ej: 200px)</code></td>
+                <td>Tamaño por defecto antes de que se aplique flex-grow o flex-shrink.</td>
+              </tr>
+              <tr>
+                <td><code>flex</code></td>
+                <td><span class="badge badge-child">Elemento Hijo</span></td>
+                <td><code>flex: 1 | flex: 0 1 auto</code></td>
+                <td>Atajo estándar para <code>flex-grow flex-shrink flex-basis</code>.</td>
+              </tr>
+              <tr>
+                <td><code>align-self</code></td>
+                <td><span class="badge badge-child">Elemento Hijo</span></td>
+                <td><code>auto | flex-start | center | flex-end | stretch | baseline</code></td>
+                <td>Sobrescribe la alineación <code>align-items</code> para un solo elemento específico.</td>
+              </tr>
+              <tr>
+                <td><code>order</code></td>
+                <td><span class="badge badge-child">Elemento Hijo</span></td>
+                <td><code>&lt;entero&gt; (ej: -1, 0, 1)</code></td>
+                <td>Cambia el orden visual sin alterar la estructura del código HTML.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span class="logo-icon">📦</span>
+        <span class="logo-text">Flexbox<strong>Lab</strong></span>
+        <p>Aprende y domina CSS Flexbox de manera intuitiva y visual.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#ejes">Ejes</a>
+        <a href="#contenedor">Contenedor</a>
+        <a href="#items">Elementos</a>
+        <a href="#sandbox">Sandbox</a>
+        <a href="#retos">Retos</a>
+      </div>
+      <div class="footer-copy">
+        <p>Diseñado para desarrolladores y estudiantes de CSS.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast notification for copy to clipboard -->
+  <div id="toast" class="toast">¡Código CSS copiado al portapapeles! 📋</div>
+
+  <script src="app.js"></script>
+</body>
+</html>

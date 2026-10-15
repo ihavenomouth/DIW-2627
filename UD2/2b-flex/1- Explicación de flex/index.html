@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Introducción a flex</h1>
+    <nav>
+      <menu>
+        <li>Primera opción</li>
+        <li>Segunda opción</li>
+        <li>Tercera opción más larga</li>
+        <li>Cuarta</li>
+      </menu>
+    </nav>
+  </header>
+  <main>
+    <h1>Explicación</h1>
+
+    <h2>Conceptos básicos</h2>
+    <p>Flex permite organizar los elementos siguiendo un eje principal. Ese eje principal se establece mediante el atributo <code>flex-direction</code>.</p>
+
+    <p>Flex siempre va a intentar colocar los elementos en el eje principal sin tener que hacerlos más pequeños. Es parecido a lo que conseguimos con la propiedad <code>width: máx-content</code>.</p>
+
+    <p>Si todos los elementos caben en el eje principal, se puede establecer cómo se va a distribuir el espacio sobrante en el eje principal con <code>justify-content</code>.</p>
+
+    <p>Si los elementos no caben, el navegador tendrá que hacer los elementos más pequeños. Si aún así no caben, se producirá un <em>overflow</em> o desbordamiento.</p>
+
+    <p>Asigna a <code>&lt;header&gt;</code> el siguiente estilo:</p>
+    <pre>
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;</pre>
+
+    <p>Juega con los valores de <code>flex-direction</code> y <code>justify-content</code>.</p>
+
+    <p>Repite la operación con <code>&lt;menu&gt;</code>, asignando los valores que corresponden para que efectivamente sea un menú:</p>
+    <pre>
+      display:flex;
+      justify-content: center;
+      gap: 1rem;</pre>
+
+    <p>Fíjate que con la propiedad <code>gap</code> podemos separar los elementos con flex y olvidarnos de los <code>margin</code> y problemas de <em>margin-collapse</em>.</p>
+
+    <p>Podemos separar los elementos del menú usando <code>margin-left:auto</code> en alguno de los <code>&lt;li&gt;</code>, pero en ese caso ya no se tendrá en cuenta el valor de <code>justify-content</code>.</p>
+
+    <p>Para distribuir el espacio en el eje secundario podemos utilizar la propiedad <code>align-items</code>. Puedes probarlo en el elemento <code>&lt;menu&gt;</code>. Las opciones disponibles son parecidas a las de <code>justify-content</code>, aunque más limitadas siendo la más utilizada <code>center</code>.</p>
+
+    <p>Precisamente usando <code>justify-content: center</code> y <code>align-items: center</code> conseguimos centrar un elemento vertical y horizontalmente.</p>
+
+    <h2>Flex-grow, flex-shrink y flex-basis</h2>
+
+    <p>Hemos dicho que flex intentará reducir el tamaño de los elementos a su contenido si hay suficiente espacio. Añade unas cuantas opciones más al menú y verás que las más largas necesitarán dos líneas para que quepa todo el texto.</p>
+
+    <p>Si sigues añadiendo elementos, verás que se terminará produciendo un desbordamiento. Para evitarlo se puede usar <code>flex-wrap: wrap</code> que permitirá tener más de una fila de elementos en el eje principal. Esto desbloquea otras propiedades avanzadas de flex.</p>
+
+    <p>Quitemos las opciones extra que hemos añadido al menú. Cuando el espacio disponible se reduce horizontalmente (por reducir la pantalla del navegador, por ejemplo), se reduce también el espacio que cada <code>&lt;li&gt;</code> ocupa.</p>
+
+    <p>Esto es posible porque cada elemento hijo de un flex tiene las siguientes propiedades por defecto:</p>
+
+    <pre>      flex-grow: 0;
+      flex-shrink: 1;
+      flex-basis: auto;</pre>
+
+    <p>Es decir, no puede crecer (por eso queda espacio vacío que gestionar), pero sí puede reducir el tamaño que ocupa.</p>
+    
+    <p>Haz la prueba asignando al mayor <code>&lt;li&gt;</code> la propiedad <code>flex-shrink:0</code> y verás que es el único que no reduce su tamaño.</p>
+
+    <p>Si ahora asignas a todos la propiedad <code>flex-grow:1</code> verás que todos crecen hasta ocupar el espacio disponible. Para calcular cuánto crecen o decrecen, lo que hace el navegador es asignarles por defecto a todos un tamaño de <code>0px</code> e ir aumentando su tamaño hasta conseguir que quepa todo su contenido. El resto del espacio disponible se distribuye proporcionalmente a su tamaño.</p>
+
+    <p>Precisamente para indicar manualmente el tamaño por defecto se usa la propiedad <code>flex-basis</code> (puedes considerarla similar al <code>width</code>). Puedes hacer la prueba asignando al último elemento de la lista el mismo valor para <code>flex-basis</code> que el ancho del elemento más grande.</p>
+    <p>Si ahora cambias el espacio disponible para que sea más pequeño, verás que su tamaño se reduce al mismo nivel que el del elemento más grande. Si cambias que todos puedan crecer (<code>flex-grow:1</code>) verás que crece tanto como aquel.</p>
+
+    <h2>Elementos del mismo tamaño y Flex:1</h2>
+
+    <p>Imagina el siguiente ejemplo, en el que queremos que las tres tarjetas tengan el mismo ancho. Sabemos que usando las opciones por defecto de flex-box eso no será posible, porque intentará no cortar el párrafo salvo que no tenga más remedio.</p>
+    
+    <div class="ejemplo">
+      <div>
+        <h3>Ejemplo</h3>
+        <p>Ejemplo de card corta.</p>
+      </div>
+      
+      <div>
+        <h3>Otro ejemplo</h3>
+        <p>Ejemplo de card con bastante más texto que las otras dos. Por defecto flexbox intentará colocarlo todo en una única línea, así que esta tarjeta será más ancha que las demás.</p>
+        
+      </div>
+      
+      <div>
+        <h3>Ejemplo</h3>
+        <p>Otro ejemplo de card.</p>
+      </div>
+    </div>
+
+    <p>Cambiar la propiedad <code>flex-grow</code> a <code>1</code> no modificará nada por sí sola, porque todo el espacio disponible ya ha sido asignado.</p>
+
+    <p>Hay varias maneras de conseguir el efecto deseado. La opción correcta es asignar el mismo valor de <code>flex-basis</code> a las tarjetas, un valor muy grande, de manera que como pueden por defecto encogerse, lo harán en la misma proporción.</p>
+
+    <pre>flex-basis: 100%; /* el ancho del contenedor */
+flex-shrink: 1; /* opción por defecto */</pre>
+
+    <aside>
+      <p><strong>Nota: </strong>no uses números mágicos como 33%, que funcionará justo en este ejemplo con 3 columnas, pero no si tenemos 2 columnas (no se ocupará todo el espacio horizontal).</p>
+    </aside>
+
+    <p>Otra opción sería justo la contraria, asignar un valor muy pequeño y permitirles que crezcan. Lo harán proporcionalmente al tamaño. Mira la opción <code>flex:1</code> que se explica más adelante.</p>
+
+<pre>flex-basis: 50px;
+flex-grow: 1;</pre>
+
+    <p>Para conseguir el mismo efecto se suele usar la propieda <code>flex:1</code>. La propiedad <code>flex:1</code> es una abreviatura de las tres propiedades que ya hemos visto con estos valores concretos (que ya debes saber por qué funciona):</p>
+
+<pre>flex-grow: 1;
+flex-shrink: 1;
+flex-basis: 0;</pre>
+
+    <aside>
+      <p><strong>Importante: </strong> En este ejemplo funciona correctamente porque tienen el mismo borde y <em>padding</em>. Cambia el padding de la primera división a <code>padding: 2rem;</code> y verás que la última división es más ancha. Esto ocurre porque cuando se calcula el espacio que se le va a asignar, se parte de un tamaño de <code>0</code> y se va aumentando poco a poco el tamaño, sin tener en cuenta bordes ni padding, hasta tener el box-content. Tiene sentido porque de la otra manera el padding podría varíar en función del espacio disponible, estropeando el diseño.</p>
+    </aside>
+
+    <aside>
+      <p><strong>Nota: </strong>este es un ejemplo en el que es mejor usar grid y ahorrarnos estos problemas.</p>
+    </aside>
+
+<pre>display: grid;
+gap: 2rem;
+grid-template-columns: 1fr 1fr 1fr;</pre>
+
+    <h2>Otras consideraciones, order, align-self y align-content</h2>
+    <p>Podemos cambiar el orden visual de algún elemento en flex usando la propiedad <code>order</code>. Prueba en el menú de navegación a aplicar a algunos elementos diversos valores como <code>order: -1</code>, <code>order:1</code>. Cuanto menor sea el número, antes aparecerá.</p>
+
+    <p>Se puede cambiar el ajuste concreto en el eje secundario para un elemento concreto usando la propiedad <code>align-self</code>.</p>
+
+    <p>Por último, cuando un elemento flex tiene activado el <code>flex-wrap: wrap</code> y además sus hijos se expanden hasta necesitar más de una fila (o columna, dependiendo del eje principal usado), podemos utilizar <code>align-content</code> con las mismas opciones que el <code>justify-content</code> (es decir, <code>space-around</code>, <code>space-between</code>, etc).</p>
+
+  <p></p>
+  </main>
+</body>
+</html>

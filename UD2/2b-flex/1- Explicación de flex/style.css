@@ -1,0 +1,145 @@
+@import url(https://fonts.googleapis.com/css?family=Zalando+Sans:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+*,::before,::after{
+  box-sizing: border-box;
+  margin:0;
+  padding: 0;
+}
+
+html{
+  /* overscroll-behavior: none; */
+  background-color: orange;
+}
+
+
+body{
+  font-family: 'Zalando Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #eee;
+  font-size: 1.1rem;
+  padding-bottom: 5rem;
+}
+
+header{
+  min-height: 50dvh; 
+  background-color: orangered;
+  color: white;
+
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+}
+
+h1{
+  font-size: 5rem;
+  font-weight: 400;
+  text-align: center;
+  padding:3rem;
+  text-wrap-style: balance;
+  border-bottom: 4px solid white;
+  background-color: #00000033;
+}
+
+main h1{
+  background-color:orangered;
+  color: white;
+  border-bottom: 10px solid #ccc;
+}
+
+h2{
+  margin:2rem;
+  font-weight: 400;
+  font-size: 2.5rem;
+  color: orangered;
+}
+
+nav{
+  background-color: #00000033;
+  font-size: 1.25rem;
+  /*
+   position: sticky;
+   top:0;
+  */
+}
+
+menu{
+  list-style: none;
+  min-height: 75px;
+
+  /* display:flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center; */
+}
+
+menu > li{
+  padding: 0.5rem;
+  /* outline: 2px solid black; */
+  /* width: max-content; */
+  /* &:last-child{
+    margin-left: auto;
+  } */
+}
+
+main{
+  max-width: 80ch;
+  margin-inline: auto;
+  padding: 1rem;
+  background-color: white;
+  box-shadow: 0px 0px 5px #ccc;
+  margin-block: 10rem;
+}
+
+p{
+  margin-block: 2rem;
+  line-height: 1.35;
+}
+
+code{
+  color: orangered;
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: #eee;
+  padding-inline: 4px;
+}
+
+pre{
+  background-color: #ff450066;
+  padding: 1rem;
+  border: 2px solid orangered;
+  border-radius: 5px;
+}
+
+.ejemplo{
+  display: flex;
+  gap: 2rem;
+
+  & h3{
+    padding: 0.5rem;
+    color: white;
+    background-color: orangered;
+    text-align: center;
+    border-bottom: 1px solid orangered;
+  }
+  & > div{
+    border: 1px solid lightgray;
+    box-shadow: 0px 0px 5px #ccc;   
+  }
+  & p {
+    padding: 1rem;
+  }
+}
+
+aside{
+  margin-block: 1rem;
+  margin-inline:auto;
+  background-color: #eee;
+  max-width: 50ch;
+  padding: 0.5rem;
+  border: 2px dotted #ccc;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  & p{
+    padding: 0;
+    margin: 0;
+  }
+}
