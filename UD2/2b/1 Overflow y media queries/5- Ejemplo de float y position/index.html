@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *,::before,::after{
+      box-sizing: border-box;
+      margin:0;
+      padding: 0;
+    }
+    html{
+      background-color: red;
+    }
+    body{
+      background-color: white;
+      min-height: 100dvh;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 1.1rem;
+    }
+    header{
+      background: radial-gradient(#f42, #921);
+      padding: 6rem 1rem;
+    }
+    h1{
+      text-align: center;
+      font-size: 5rem;
+      text-wrap-style: balance;
+      font-weight: 900;
+      color:transparent;
+      background: linear-gradient(45deg, darkred, red);
+      background-clip: text;
+    }
+
+    p{
+      line-height: 1.5;
+      margin-block: 2rem;
+    }
+
+    main{
+      max-width: 80ch;
+      margin-inline: auto;
+      padding: 3rem 1rem;
+      text-align: justify;
+      text-indent: 2rem;;
+    }
+
+    .float-left{
+      --offset: 6rem;
+      float: left;
+      /* margin: 1rem 1rem 1rem 0; */
+      margin: 1rem calc( 1rem - var(--offset) ) 1rem 0;
+      transform: translateX(calc( -1 * var(--offset)));
+    }
+    
+    .float-right{
+      --offset: 10rem;
+      float: right;
+      margin: 1rem 0 1rem calc( 1rem - var(--offset) );
+      transform: translateX(var(--offset));
+    }
+
+
+
+
+        aside{
+      position: fixed;
+      top: 6rem;
+      right: 2rem;
+      background-color: #e32626;
+      color: black;
+      padding: 1rem;
+      border: 5px solid black;
+      border-radius: 15px;
+
+      & menu{
+        list-style: none;
+      }
+      & a{
+        color: white;
+      }
+      & h2{
+        margin-bottom:2rem;
+      }
+      & .filigrana-left{
+        position: absolute;
+        right: 101%;
+        font-size: 5rem;
+        top: 1rem;
+      }
+      & .filigrana-right{
+        position: absolute;
+        left: 101%;
+        font-size: 5rem;
+        top: 1rem;
+        transform:scaleX(-1);
+      }
+
+    }
+
+
+    
+    @media screen and (width<60rem){
+      .float-left{
+        --offset:0;
+        margin: 1rem 1rem 1rem 0;
+      }
+      
+      .float-right{
+        --offset:0;
+        margin: 1rem 0rem 1rem 1rem;
+      }
+      img{
+        width: 60%;
+      }
+      p{
+        text-wrap-style: balance;
+      }
+
+
+      aside{
+        position: relative;
+      
+        top: -3rem;
+        width: 50%;
+        margin-inline: auto;
+        
+        text-align: center;
+        & menu{
+          display: flex;
+          justify-content: space-evenly;
+        }
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ejemplo de uso<br>de position y float</h1>
+  </header>
+
+  <main>
+    <p>
+      <img class="float-left" src="pasted_image098.png" alt="">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptate libero, porro enim perspiciatis atque ipsam id repellendus dolor repudiandae autem voluptates doloribus a nostrum neque blanditiis rerum! Corrupti, sunt!
+      Totam provident veritatis illo est quibusdam quas nulla. Aperiam sed cumque cupiditate expedita saepe quisquam quas at? Veritatis officia sapiente assumenda ex illum at odio, repellendus tempora, nam quos optio.
+    </p>
+    <p>
+      <img class="float-right" src="pasted_image054.png" alt="">
+      Vitae, doloribus! Mollitia asperiores dolorum odio fugit eveniet vero obcaecati, voluptate molestiae corrupti assumenda quasi delectus quia numquam quaerat! Itaque voluptas saepe voluptate ex dolore in dicta veritatis consequuntur vitae.
+      Nam tenetur sapiente quibusdam quisquam? Dignissimos esse, obcaecati consequuntur saepe nesciunt dolorem porro ducimus culpa, consequatur veritatis architecto suscipit. Maiores sequi mollitia amet nobis delectus et totam reprehenderit eaque facilis.
+      Placeat dolor fugit eaque voluptatibus consequatur odit nihil porro in animi, fugiat magnam ex id necessitatibus error sint cumque. Dolorem repudiandae iusto temporibus voluptates animi ipsum nam, non ratione! Commodi!
+      Vitae, doloribus! Mollitia asperiores dolorum odio fugit eveniet vero obcaecati, voluptate molestiae corrupti assumenda quasi delectus quia numquam quaerat! Itaque voluptas saepe voluptate ex dolore in dicta veritatis consequuntur vitae.
+      
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia voluptate libero, porro enim perspiciatis atque ipsam id repellendus dolor repudiandae autem voluptates doloribus a nostrum neque blanditiis rerum! Corrupti, sunt!
+      Totam provident veritatis illo est quibusdam quas nulla. Aperiam sed cumque cupiditate expedita saepe quisquam quas at? Veritatis officia sapiente assumenda ex illum at odio, repellendus tempora, nam quos optio.
+    </p>
+    <p>
+      Vitae, doloribus! Mollitia asperiores dolorum odio fugit eveniet vero obcaecati, voluptate molestiae corrupti assumenda quasi delectus quia numquam quaerat! Itaque voluptas saepe voluptate ex dolore in dicta veritatis consequuntur vitae.
+      Nam tenetur sapiente quibusdam quisquam? Dignissimos esse, obcaecati consequuntur saepe nesciunt dolorem porro ducimus culpa, consequatur veritatis architecto suscipit. Maiores sequi mollitia amet nobis delectus et totam reprehenderit eaque facilis.
+      Placeat dolor fugit eaque voluptatibus consequatur odit nihil porro in animi, fugiat magnam ex id necessitatibus error sint cumque. Dolorem repudiandae iusto temporibus voluptates animi ipsum nam, non ratione! Commodi!
+      Vitae, doloribus! Mollitia asperiores dolorum odio fugit eveniet vero obcaecati, voluptate molestiae corrupti assumenda quasi delectus quia numquam quaerat! Itaque voluptas saepe voluptate ex dolore in dicta veritatis consequuntur vitae.
+      
+    </p>
+  </main>
+
+  <aside>
+    <h2>¡Síguenos!</h2>
+    <menu>
+      <li><a href="">Facebook</a></li>
+      <li><a href="">Instagram</a></li>
+      <li><a href="">Twitter</a></li>
+    </menu>
+    <div class="filigrana-left">⸾</div>
+    <div class="filigrana-right">⸾</div>
+  </aside>
+</body>
+</html>

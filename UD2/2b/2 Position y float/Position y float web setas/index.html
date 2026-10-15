@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Ejemplo de position</h1>
+</header>
+<main>
+  <article>
+		<div class="imagen">
+				<img src="sevilla.png">
+		</div>
+		<div class="contenido">
+			<p>La imagen de las setas de la izquierda tiene en el css <code>position: absolute;</code>, lo que desbloquea las propiedades <code>top, right, bottom y left</code> (además del <code>z-index</code>) y la <em>saca</em> del flujo normal de la página permitiendo que se coloque libremente donde queramos. El resto de los elementos se comportarán como si no estuviera allí y procederán a ocupar el espacio que normalmente ocuparía la imagen.</p>
+		
+			<p>Los valores <code>top, right, bottom y left</code> son coordenadas respecto a la primera etiqueta antecesora que encuentre con <code>position: relative</code> (en realidad respecto a cualquier etiqueta que no sea <code>position:static</code>). Si no encuentra ninguna se colocará respecto al <code>&lt;body&gt;</code>.</p>
+		
+		
+			<p>La división <code>&lt;div class="imagen"&gt;</code> que contiene la imagen tiene como <code>position:relative</code>, 
+			que no lo saca del flujo normal de la página. Se le asigna un <code>width</code> y <code>height</code> para que se respete el espacio que ocupaba la imagen (la altura de la división es menor que la altura de la imagen).</p>
+		
+			<p>Para que la imagen no se coloque encima de la cabecera en ninguna circunstancia, el <code>&lt;h1&gt;</code> tiene un
+			<code>z-indez:1></code>, lo que lo coloca en una <em>capa</em> superior.</p>
+
+			<p><img src="setas.png" alt="Setas de la Encarnación"></p>
+		</div>
+	</article>
+
+
+	<aside>
+		<h2>Un detalle</h2>
+		<p>La imagen al estar con <code>position:absolute</code> se saca del flujo normal de la página y no deja hueco detrás, por lo que la división que la contiene estará vacía, por lo que por defecto tendría una altura de <code>0px</code>. Para compensar el movimiento vertical de la imagen de <code>80px</code> se le asigna a la división una altura de <code>230px (altura de la imagen) - 80px de desplazamiento = 150px</code>.<br>
+		Se podría haber conseguido el mismo efecto sin la división de la imagen, aplicando <code>position:relative</code> y <code>float:left</code> a la imagen con un <code>top: -80px</code>, <code>right: 20px</code> y <code>margin-bottom: -60px</code>. 
+		</p>
+		<p>Además, este <code>&lt;aside&gt;</code> tiene una propiedad <code>position: fixed</code>, pero como está dentro de un <code>display:grid</code> (con <code>flex</code> pasaría lo mismo) se ha tenido que usar la propiedad <code>align-self: center</code>, aunque <code>start</code> podría haber servido igualmente. </p>
+	</aside>
+	
+</main>
+
+
+
+<footer>
+	<p>Fin del ejemplo</p>
+	<hr>
+	<p>Javier Mancera</p>
+	<p>IES Cristóbal de Monroy</p>
+	<p>Alcalá de Guadaíra</p>
+	<p>Sevilla</p>
+</footer>
+
+</body>
+</html>

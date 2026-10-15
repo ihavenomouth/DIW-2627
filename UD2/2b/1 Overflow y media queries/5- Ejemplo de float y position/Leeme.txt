@@ -1,0 +1,8 @@
+Cosas interesantes:
+- Las imágenes se han sacado de las restricciones de tamaño del main usando transform.
+- Se han usado variables locales para los márgenes negativos.
+- Se han realizado cálculos con la función calc()
+- Se ha utilizado un position: fixed para el aviso de redes sociales.
+- Se ha usado position: absoute para las filigranas (funciona porque el padre no tiene position:static). Que por cierto son caracteres unicode.
+- Con una media query se adapta el margen negativo de las imágenes.
+- Se ha usado flexbox.
