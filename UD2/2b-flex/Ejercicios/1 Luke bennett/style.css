@@ -1,0 +1,71 @@
+*,::before,::after{
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  background-color: #0f766e;
+}
+
+.card{
+  background-color: #f4f4f5;
+  max-width: 80ch;
+  margin-block:3rem;
+  margin-inline: auto;
+  border-radius: 10px;
+  padding:2rem;
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3rem;
+}
+
+
+menu{
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap:2rem;
+  background-color: lightgray;
+  padding: 0.2rem;
+  border-radius: 25px;
+  box-shadow: inset 2px 2px 0px #b6b6b6;
+}
+
+menu li{
+  padding: 0.1rem 1rem;
+}
+
+.selected{
+  background-color: #fafafb;
+  border-radius: 25px;
+  padding: 0.1rem 1rem;
+  box-shadow: 2px 2px 0px #b6b6b6;
+}
+
+main{
+  margin:2rem 5rem;
+}
+
+
+section.redes-sociales{
+  text-align: center;
+  & > *{
+    margin-block:1rem;
+  }
+}
+
+.logos{
+  display: flex;
+  gap:2rem;
+  justify-content: center;
+}
+
+h1, .imagen{
+  margin-block:2.5rem;
+}
