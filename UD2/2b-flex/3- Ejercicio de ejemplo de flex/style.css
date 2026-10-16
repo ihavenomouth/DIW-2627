@@ -1,0 +1,87 @@
+*,::before,::after{
+  box-sizing: border-box;
+  padding: 0;
+  margin:0;
+}
+
+
+:root{
+  --accent-color: rgb(44, 173, 227);
+  --bg-color: rgba(44, 172, 227, 0.2);
+
+}
+
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  background-image: radial-gradient(
+     var(--bg-color) 2px, 
+     transparent 2px);
+
+  background-size: 40px 40px;
+  max-width: 100ch;
+  margin-inline:auto;
+
+}
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3rem;
+  padding-block: 1rem;
+}
+
+
+.boton, button{
+  background-color: var(--accent-color);
+  border:0;
+  padding: 1rem 2rem;
+  border-radius: 7px;
+  font:inherit;
+  color: white;
+  font-variant-caps: all-small-caps;
+  font-weight: 600;
+  line-height: 1rem;
+  cursor: pointer;
+}
+
+.enlaces{
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  & a{ 
+    text-decoration: none;
+  }
+}
+
+
+main{
+  display: flex;
+  margin: 3rem;
+  min-height: 50dvh;
+  gap: 2rem;
+
+  & > *{
+    flex:1;
+  }
+}
+
+.texto{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+
+.imagen img{
+  width:100%;
+  box-shadow: 5px 5px 5px lightgray;
+}
+
+
+
+.imagen {
+  display: flex;
+  align-items: center;
+}
