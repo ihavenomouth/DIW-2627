@@ -1,0 +1,96 @@
+*,::before,::after{
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #fadf4a;
+  min-height: 100dvh;
+  padding: 0;
+  margin:0;
+  color: #6f5803;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  margin-bottom: 8rem;
+
+  & menu{
+    list-style: none;
+    margin:0;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    gap:1rem;
+    flex-wrap: wrap;
+  }
+
+}
+
+li{
+  font-variant-caps: all-small-caps;
+  font-size: 1.5rem;
+  letter-spacing: 0.07rem;
+}
+
+
+.lápiz{
+  width: 100%;
+}
+
+
+
+/* Main content */
+main{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+
+.texto{ 
+  max-width: 40ch;
+  margin-right: 4rem;
+ 
+  & p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.25rem;
+  }
+  & h1{
+      font-size: 2rem;
+      text-transform: uppercase;
+      font-weight: 400;
+      letter-spacing: 0.07rem;
+    }
+  & a{
+    font-variant-caps: all-small-caps;
+    font-size: 1.5rem;
+    letter-spacing: 0.07rem;
+    color: inherit;
+  }
+}
+
+
+.hiring{
+  background-color: white;
+  position: fixed;
+  right:2rem;
+  bottom:2rem;
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  font-weight: 300;
+  line-height: 1.15rem;
+
+  & span{
+    font-size:2rem;
+  }
+}
