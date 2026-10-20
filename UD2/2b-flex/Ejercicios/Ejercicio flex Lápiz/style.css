@@ -65,30 +65,32 @@ main{
       font-weight: 400;
       letter-spacing: 0.07rem;
     }
-  & a{
-    font-variant-caps: all-small-caps;
-    font-size: 1.5rem;
-    letter-spacing: 0.07rem;
-    color: inherit;
+    & a{
+      font-variant-caps: all-small-caps;
+      font-size: 1.5rem;
+      letter-spacing: 0.07rem;
+      color: inherit;
+    }
   }
-}
-
-
-.hiring{
-  background-color: white;
-  position: fixed;
-  right:2rem;
-  bottom:2rem;
-  border-radius: 50%;
-  width: 5rem;
-  height: 5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   
-  font-weight: 300;
-  line-height: 1.15rem;
+  
+  .hiring{
+    background-color: white;
+    position: fixed;
+    right:2rem;
+    bottom:2rem;
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    font-weight: 300;
+    line-height: 1.15rem;
+    text-transform: uppercase;
+    text-align: center;
 
   & span{
     font-size:2rem;
