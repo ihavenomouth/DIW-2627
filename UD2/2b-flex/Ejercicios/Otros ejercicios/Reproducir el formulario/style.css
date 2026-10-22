@@ -1,0 +1,113 @@
+*,::after,::before{
+  box-sizing: border-box;
+}
+
+:root{
+  --primary-color: #ef2a2b;
+  --facebook-color: #395895;
+  --twitter-color: #05aae8;
+  --text-color: #333;
+}
+
+body{
+  max-width: max-content;
+  padding: 0;
+  margin-block: 4rem;
+  margin-inline: auto;
+  background-color: #eee;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  accent-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+article{
+  background-color: white;
+  width:50ch;
+}
+
+
+
+.card-title{
+  padding: 1rem;
+  text-transform: uppercase;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.contenido{
+  padding: 1.5rem;
+}
+
+
+.form-group{
+  display: flex;
+  margin-block: 2rem;
+  align-items: center;
+}
+
+.con-borde-inferior{
+  border-bottom: 1px solid black;
+}
+
+.con-check-box{
+  /* border-bottom: none; */
+  justify-content: space-between;
+}
+
+input{
+  border: 0;
+}
+
+
+button{
+  border: 0;
+  padding: 0.75rem 1rem;
+  width:100%;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+button.primary{
+  background-color: var(--primary-color);
+}
+button.facebook{
+  background-color: var(--facebook-color);
+}
+button.twitter{
+  background-color: var(--twitter-color);
+}
+
+.continue{
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.botones-redes-sociales{
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  
+  & button{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+  }
+  & img {
+    width: 2.25rem;
+    color: white;
+    padding-right:1rem;
+    border-right: 1px solid white;
+    /* filter:invert(); */
+  }
+}
+
