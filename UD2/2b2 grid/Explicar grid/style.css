@@ -1,0 +1,150 @@
+
+
+@import url(https://fonts.googleapis.com/css?family=Narnoor:regular,500,600,700,800);
+
+
+*,::before,::after{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  padding:0;
+  min-height: 100dvh;
+  font-family: Narnoor, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url("bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+}
+
+nav{
+  padding: 1rem;
+  background-color: #0026;
+  backdrop-filter: blur(2px);
+
+  & menu{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
+img{
+  width: 100%;
+  border-radius: 10px;
+  border: 5px solid currentColor;
+}
+
+
+section{
+  background-color: #0026;
+  border-radius: 15px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+h1{
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+h2{
+  border-bottom:2px solid currentColor;
+}
+
+ul{
+  list-style: '- ';
+  font-size: 1.5rem;
+  & span{
+    color: hsl(89, 79%, 57%);
+  }
+}
+
+
+
+
+
+.grid{
+  padding: 1rem;
+  display:grid;
+  gap: 2rem;
+  /* grid-template-columns: 300px auto 200px; */
+  
+  /* grid-template-columns: 300px repeat(3, 1fr); */
+  /* grid-template-columns: 300px minmax(600px, 1fr); */
+  
+  
+  /* con dense recoloca los hijos que no estén en posiciones explícitas en posiciones libres */
+  /* grid-auto-flow: row dense;  */
+  
+
+  /* Cuando se crean filas automáticamente, ¿de qué tamaño se crean? */
+  /* en este caso la primera se adapta al contenido, la segunda tiene un tamaño fijo 
+  de 500px y las que se creen automáticamente serán de 800px*/
+  /* grid-template-rows: auto 500px;
+  grid-auto-rows: 800px; */
+
+  /* Filas automáticas con altura mínima de 190px */
+  /* grid-auto-rows: minmax(190px, auto); */
+
+
+  /* grid-template-columns: 1fr 1fr; */
+  /* Si colocas un hijo en una columna que no está definida (la cuarta, por ejemplo), 
+  se crearán nuevas columnas del tamaño que se indican.*/
+  /* grid-auto-columns: 350px;  */
+  
+
+  
+  /* grid-template-areas: 
+    'header header lat-der'
+    'lat-izq imagen lat-der'
+    'lat-izq datos datos'
+    'footer footer copy'
+  ; */
+  
+  /* auto-fill es más adecuado para resultados de búsquedas que permitan filtros o añadir o eliminar elementos.
+  auto-fit es más adecuado cuando no vayan a cambiar el número de elementos. La diferencia se aprecia cuando muy hay pocos elementos. */
+  --min-col-size: 300px;
+  /* grid-template-columns:
+   repeat(auto-fit, minmax( min(var(--min-col-size), 100%), 1fr)); */
+}
+
+
+
+#section-1{
+  /* grid-area: header; */
+}
+
+#section-2{
+  /* grid-area: lat-der; */
+}
+#section-3{
+  /* grid-area: imagen; */
+  /* grid-column:1; */
+  /* grid-column: 1 span 3 */
+  /* grid-row: 1 / -1 */
+}
+#section-4{
+  /* grid-area: lat-izq; */
+  /* grid-column: 3; */
+  background-color: #7cb34244;
+}
+#section-5{
+  /* grid-area: datos; */
+  background: none;
+}
+#section-6{
+  /* grid-area: copy; */
+}
+#section-7{
+  /* grid-area: footer; */
+}

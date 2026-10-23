@@ -1,0 +1,94 @@
+*,::before,::after{
+  box-sizing: border-box;
+}
+
+
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #eee;
+  margin:0 auto;
+  padding: 1rem;
+  max-width: 80rem;
+  accent-color: springgreen;
+}
+
+form{
+  margin: 1rem;
+  /* border: 1px solid black; */
+  padding: 1rem;
+  box-shadow: 5px 5px 10px #999;
+  border-radius: 10px;
+  background-color: white;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+
+
+h1{
+  font-size: 3.5rem;
+  font-weight: 400;
+}
+
+#galeria{
+  box-shadow: 5px 5px 10px #999;
+  padding: 0.5rem;
+  border-radius: 10px;
+  background-color: white;
+  & img{
+    width:100%;
+  }
+  & p{
+    text-align: center;
+  }
+  &:empty{
+    display: none;
+  }
+}
+
+
+label{
+  text-align: right;
+}
+
+input{
+  padding: 0.5rem 1rem;
+}
+
+.form-group{
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+button{
+  background-color: springgreen;
+  padding: 0.5rem 1rem;
+  min-width: 15rem;
+  font:inherit;
+  font-weight: 600;
+  font-variant-caps: all-small-caps;
+  &:hover{
+    filter:brightness(0.95);
+    cursor: pointer;
+  }
+  &:active{
+    scale:0.95;
+  }
+}
+
+.autogrid {
+  --min-col-size: 300px; /*65ch*/
+  display: grid;
+  gap: 0.5rem;
+  /* auto-fill es mejor si el nº de elementos va a cambiar (borrar, filtrar, ...)
+     porque así no cambiarán de tamaño los elementos que queden. Sólo es apreciable
+     si queda una única fila de elementos. */
+  grid-template-columns:
+   repeat(auto-fit, minmax( min(var(--min-col-size), 100%), 1fr));
+}

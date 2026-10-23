@@ -1,0 +1,121 @@
+@import url(https://fonts.googleapis.com/css?family=Nobile:regular,italic,500,500italic,700,700italic);
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
+
+*,::before,::after{
+		box-sizing: border-box;
+}
+body{
+	font-family: 'Roboto', Arial, Helvetica, sans-serif;
+	margin: 0;
+	background-color: #1d122e;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction:column;
+	padding: 1rem;
+}
+
+.ejemplo img {
+	width: 400px;
+}
+
+.overview{
+	background-color: #2a2449;
+	width: 30ch;
+	border-radius: 20px;
+	color: whitesmoke;
+}
+
+.presentacion{
+	padding: 2rem;
+}
+
+.overview .presentacion > img:first-child{
+	border-radius: 50%;
+	border: 2px solid rgb(119, 119, 213);
+	width: 75px;
+	margin: 0 auto;
+	display:block;
+}
+
+.overview .display{
+	color: whitesmoke;
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+.overview p {
+	color: rgb(79, 88, 116);
+	font-size: 0.65rem;
+	text-align: center;
+}
+
+.overview button{
+	width:100%;
+	margin-bottom: 0.5rem;
+	border-radius: 7px;
+	padding: 0.5rem 1rem 0.5rem 1rem;
+	border: 1px solid transparent;
+	color:inherit;
+	font-size: 0.7rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.overview button.email{
+	background-color: #4862f8;
+}
+
+.overview button.merch {
+	background-color:#3e3757;
+}
+
+.overview button svg{
+	height: 1rem;
+}
+
+.overview button:hover{
+	filter:brightness(1.1);
+}
+.overview button:active{
+	transform:scale(0.97);
+}
+
+.overview .redes-sociales{
+	background-color: #241f40;
+	display: flex;
+	justify-content: space-around;
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+	padding: 1rem;
+}
+.overview .redes-sociales > div{
+	width: 5ch;
+	text-align: center;
+}
+
+.overview .redes-sociales >div svg{
+	border-radius: 50%;
+	width: 100%;
+	height: auto;
+	padding: 0.6rem;
+}
+.overview .redes-sociales >div:nth-child(1) svg{
+	background-color: #d93333;
+}
+.overview .redes-sociales >div:nth-child(2) svg{
+	background-color: #2b88fa;
+}
+.overview .redes-sociales >div:nth-child(3) svg{
+	background-color: #9d50fb;
+}
+
+.overview .followers-numbers{
+	font-size: 1.25rem;
+	color: whitesmoke;
+	margin:0;
+}
+.followers-text{
+/**/
+}
