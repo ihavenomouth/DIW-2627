@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{box-sizing: border-box;}
+    .grid{
+      display:grid;
+      /* grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr); */
+      grid-template-areas: 
+      'arr-izq arr-cen arr-der'
+      'cen-izq grande grande'
+      'aba-izq grande grande';
+      min-height: 100dvh;
+      gap: 1rem;
+    }
+
+    article{
+      background-color: var(--color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: white;
+
+      &:nth-child(1){ grid-area: arr-izq; }
+      &:nth-child(2){ grid-area: arr-cen; }
+      &:nth-child(3){ grid-area: grande; }
+      &:nth-child(4){ grid-area: arr-der; }
+      &:nth-child(5){ grid-area: cen-izq; }
+      &:nth-child(6){ grid-area: aba-izq; }
+    }
+
+
+  </style>
+</head>
+<body>
+  <main class="grid">
+    <article style="--color:teal;">A</article>
+    <article style="--color:orange;">B</article>
+    <article style="--color:green;">C</article>
+    <article style="--color:purple;">D</article>
+    <article style="--color:deeppink;">E</article>
+    <article style="--color:blue;">F</article>
+  </main>
+  
+</body>
+</html>

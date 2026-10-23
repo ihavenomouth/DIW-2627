@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *,::after,::before{
+      box-sizing: border-box;
+    }
+    
+    body{
+      margin: 0;
+      padding: 0;
+      
+      background-image: url("sadiq-padela.jpg");
+      background-size: cover;
+      background-position: 0px center;
+      background-repeat: no-repeat;
+      backdrop-filter: grayscale();
+    }
+
+    main{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      min-height: 100dvh;
+    }
+
+    .red{
+      background-color: #f00a;
+      grid-column: 3;
+      grid-row: 1;
+    }
+    
+    .white{
+      background-color: #fffa;
+      grid-column: 1 /-2;
+      grid-row: 3;
+
+      display: grid;
+      place-items: center;
+      
+      text-wrap-style: balance;
+      font-size: 7rem;
+      text-align: center;
+      color: #6666;
+    }
+
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="red"></div>
+    <div class="white">IES Cristóbal de Monroy</div>
+  </main>
+
+</body>
+</html>

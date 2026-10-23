@@ -1,0 +1,38 @@
+*,::after,::before{
+  box-sizing: border-box;
+}
+
+body{
+  min-height: 100dvh;
+  margin:0;
+  padding:0;
+  background-image: linear-gradient(in hsl,rgb(227, 80, 80), rgb(203, 69, 203));
+
+  display: grid;
+  place-items: center;
+}
+
+main{
+  display: grid;
+  rotate: 45deg;
+  grid-template-columns: 200px 200px 200px;
+  grid-template-rows: 200px 200px 200px;
+  gap: 1rem;
+}
+
+article{
+  rotate:-45deg;
+  display: grid;
+  place-items: center;
+  position: relative;
+  &::after{
+    position:absolute;
+    inset: 0 0 0 0;
+    rotate: 45deg;
+    content:'';
+    background-color: #ff1493aa;
+    border: 1px solid white;
+    z-index: -1;
+    box-shadow: 5px 5px 15px #00008066;
+  }
+}

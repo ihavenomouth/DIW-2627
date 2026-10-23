@@ -78,8 +78,9 @@ ul{
   display:grid;
   gap: 2rem;
   /* grid-template-columns: 300px auto 200px; */
+  /* grid-template-columns: 1fr 3fr 1fr; */
   
-  /* grid-template-columns: 300px repeat(3, 1fr); */
+  /* grid-template-columns: 300px repeat(1, 1fr); */
   /* grid-template-columns: 300px minmax(600px, 1fr); */
   
   
@@ -104,12 +105,12 @@ ul{
   
 
   
-  /* grid-template-areas: 
+  grid-template-areas: 
     'header header lat-der'
     'lat-izq imagen lat-der'
-    'lat-izq datos datos'
+    'lat-izq datos copy'
     'footer footer copy'
-  ; */
+  ;
   
   /* auto-fill es más adecuado para resultados de búsquedas que permitan filtros o añadir o eliminar elementos.
   auto-fit es más adecuado cuando no vayan a cambiar el número de elementos. La diferencia se aprecia cuando muy hay pocos elementos. */
@@ -121,30 +122,34 @@ ul{
 
 
 #section-1{
-  /* grid-area: header; */
+  grid-area: header;
+  /* grid-column-end: span 4; */
+  grid-column: 1 / -1;
 }
 
 #section-2{
-  /* grid-area: lat-der; */
+  grid-area: lat-der;
 }
 #section-3{
-  /* grid-area: imagen; */
+  grid-area: lat-izq;
   /* grid-column:1; */
+  /* grid-column-end: span 2; */
+  /* grid-row: 4; */
   /* grid-column: 1 span 3 */
   /* grid-row: 1 / -1 */
 }
 #section-4{
-  /* grid-area: lat-izq; */
+  grid-area: imagen;
   /* grid-column: 3; */
   background-color: #7cb34244;
 }
 #section-5{
-  /* grid-area: datos; */
+  grid-area: datos;
   background: none;
 }
 #section-6{
-  /* grid-area: copy; */
+  grid-area: copy;
 }
 #section-7{
-  /* grid-area: footer; */
+  grid-area: footer;
 }
