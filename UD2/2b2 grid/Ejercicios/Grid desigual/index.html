@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- <script defer src="code.js"></script> -->
+    <!-- <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css"> -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+		<h1>Rejilla desigual</h1>
+		<p>El truco consiste en tener tres columnas en lugar de dos, haciendo que se solapen en el centro las dos divisiones que están en cada fila.</p>
+		<p>Cada división tendrá una propiedad CSS <code>clip-path</code> diferente.</p>
+		<p>Con <code>clip-path: polygon( punto, punto, punto, punto,...)</code> podemos definir un polígono que definirá la parte de la división que se verá. Cada punto será un par de coordenadas x y. Por ejemplo, la primera imagen tiene la siguiente propiedad.</p>
+		<pre>clip-path: polygon(0% 0%, 95% 0, 85% 100%, 0% 100%);</pre>
+    <main>
+      <div class="img1">
+        <img src="ideogram1.jpeg" />
+      </div>
+      <div class="img2">
+        <img src="ideogram2.jpeg" />
+      </div>
+      <div class="img3">
+        <img src="ideogram3.jpeg" />
+      </div>
+      <div class="img4">
+        <img src="ideogram4.jpeg" />
+      </div>
+    </main>
+  </body>
+</html>

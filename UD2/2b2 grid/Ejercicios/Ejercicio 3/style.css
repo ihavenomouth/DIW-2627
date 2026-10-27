@@ -1,0 +1,83 @@
+
+@import url(https://fonts.googleapis.com/css?family=Jost:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+@import url(https://fonts.googleapis.com/css?family=Poly:regular,italic);
+
+*,::after,::before{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Jost','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+h1,h2,h3{
+  font-family: 'Poly','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1{
+  font-size: 5rem;
+}
+h2{
+  font-size: 3.25rem;
+  margin:0;
+  padding:0;
+}
+h3{
+  font-size: 1.75rem;
+  margin:0;
+  padding:0;
+}
+
+
+article{
+  background-color: var(--bg-color);
+  color: var(--color, #333);
+  border-radius: 20px;
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  
+  & .user{
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+  }
+
+  & .datos{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 1rem;
+    align-items: center;
+  }
+}
+
+.grid img{
+  width:150px;
+  height:150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+
+
+.grid{
+  background-color: #dde;
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  /* grid-template-rows: 1fr 1fr; */
+
+  & article:nth-child(1){   grid-column: span 2;}
+  /* & article:nth-child(2){   grid-column: span 2;} */
+  & article:nth-child(3){   grid-row: span 2;}
+  /* & article:nth-child(4){   grid-column: span 2;} */
+  & article:nth-child(5){   grid-column: span 2;}
+}
