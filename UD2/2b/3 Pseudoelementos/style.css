@@ -71,25 +71,25 @@ blockquote{
   }
 
   position: relative;
-  overflow: clip;
   z-index: 0;
-  
+  overflow: clip;
 
   &::before{
-    /* content: '“”ℹ✐❠❞ⓘ'; */
-    content: '“”';
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 8rem;
+    content: 'ⓘ';
+    font-size: 9rem;
     position: absolute;
-    top:0;
-    left:2rem;
-    rotate: -15deg;
-    color: yellow;
-    opacity:0.5;
+    top: 0;
+    left:4rem;
+    font-family: 'Times New Roman', Times, serif;
+    color: orange;
+
+    rotate: -35deg;
+
     z-index: -1;
-    line-height: 1;
   }
+
 }
+
 
 
 
@@ -136,6 +136,10 @@ input{
     outline:3px solid crimson;
     outline-offset: 1px;
   }
+}
+
+input[type=number]{
+  appearance: textfield;
 }
 
 input::placeholder{
@@ -193,4 +197,15 @@ details[open]::details-content {
     font-weight: 600;
     float:left;
   }
+}
+
+input[type="file"]{
+  display: none;
+}
+
+
+label{
+  background-color: crimson;
+  padding: 0.5rem 1rem;
+  color: white;
 }

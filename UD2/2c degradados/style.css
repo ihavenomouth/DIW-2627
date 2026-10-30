@@ -1,0 +1,37 @@
+*,::after,::before{
+  box-sizing: border-box;
+}
+
+
+main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > div{
+    min-width: 200px;
+    min-height: 200px;
+    flex:1;
+  }
+
+  & div:nth-child(1){
+    background-color: red;
+    background-image: linear-gradient(red, blue);
+  }
+
+  & div:nth-child(1){
+    background-color: red;
+    background-image: conic-gradient( red, blue)
+  }
+}
+
+
+
+h1{
+  font-weight: 900;
+  font-size: 8rem;
+
+  background-image: linear-gradient(rebeccapurple, purple);
+  background-clip: text;
+  color: transparent;
+}
