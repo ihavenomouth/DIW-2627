@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <h1>Pseudoelementos</h1>
+
+  <main>
+    
+
+    <p>Los pseudoelementos permiten añadir contenido que no existe en el HTML por motivos <strong>estéticos</strong>. Algunos de estos pseudoelementos los hemos trabajado aunque sin prestarles demasiada atención, como por ejemplo <code>::placeholder</code> o <code>::marker</code>.</p>
+    
+    
+    <blockquote>Al igual que las Pseudo-classes, los pseudo-elementos se añaden a los selectores, pero  no describen un estado especial sino que, permiten añadir estilos a una parte concreta del elemento.
+      <address><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/Pseudo-elements">MDN Pseudo-elements</a></address>
+    </blockquote>
+
+    <section>
+      <h2>Texto seleccionado</h2>
+      <p>Si intentas seleccionar el texto de una web ¿qué colores se utilizan? ¿quién los ha decidido?</p>
+      
+      <p>En esta web se usa profusamente <code>crimson</code> como color principal y el <code>yellow</code> como color de acento de algunas partes muy concretas como la URL del <code>&lt;blockquote&gt;</code>. ¿Por qué no usar precisamente esos colores para resaltar el texto seleccionado?</p>
+
+<pre>
+
+  *::selection {
+    color: crimson;
+    background-color: #ffee00;
+  }
+
+</pre>
+        
+    </section>
+
+    <section>
+      
+      <h2>Listas</h2>
+      <p>En las listas, se puede elegir el tipo de lista con la propiedad <code>list-type</code> del elemento <code>&lt;ul&gt;</code> (la viñeta elegida será común a todos los ítems) o del elemento <code>&lt;li&gt;</code>.</p>
+      <p>Una poder personalizar la viñeta es usando el pseudoelemento <code>li::marker</code>.</p>
+      <p><u>Tareas hechas</u></p>
+      <ul class="tareas-hechas">
+        <li>Pasear al perro</li>
+        <li>Tirar la basura</li>
+      </ul>
+      
+      <p><u>Tareas sin hacer</u></p>
+      <ul class="tareas-sin-hacer">
+        <li>Corregir</li>
+        <li>Preparar el examen</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Inputs</h2>
+      <p>Los inputs tienen un pseudoelemento <code>::placeholder</code> que recoge el valor del atributo html <code>placeholder</code>. Ese psudoelemento podemos estilarlo para que adapte a nuestras necesidades estéticas.</p>
+
+      <form>
+        <div class="form-group">
+          <label>Nombre:</label><br>
+          <input type="text" name="" id="" placeholder="Ana Pérez">
+        </div>
+        <div class="form-group">
+          <label>Edad:</label><br>
+          <input type="number" name="" id="" placeholder="28">
+        </div>
+      </form>
+    </section>
+
+
+    <section>
+      <h2>Details + summary</h2>
+      <details open>
+        <summary>Example summary</summary>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p> Architecto cupiditate ea optio modi quas sequi, esse libero asperiores
+        debitis eveniet commodi hic ad.</p>
+      </details>
+    </section>
+
+    <section>
+      <h2>Primera línea y primera letra</h2>
+      <p class="primera-línea">Puede ocurrir que queremos destacar a de alguna manera la primera línea de un párrafo, pero no podemos estar seguros de cuándo termina esa primera línea porque depende del ancho del contenedor en el que se encuentre y también del tamaño del texto. También puede ocurrir que nos interese destacar la primera palabra del párrafo por razones estilísticas. Esto último es algo relativamente común en algunas novelas.</p>
+    </section>
+  </main>
+</body>
+</html>
