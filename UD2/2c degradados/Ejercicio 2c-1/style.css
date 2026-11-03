@@ -1,0 +1,50 @@
+*,::before,::after{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin:0;
+  padding: 1rem;
+  background-color: #123;
+}
+
+h1{
+  text-align: center;
+  font-weight: 400;
+  font-size: 6rem;
+  color:aqua;
+  background-image: radial-gradient(at 0% 0%, white, #aaa);
+  color: transparent;
+  background-clip: text;
+}
+
+.landing{
+  max-width: 60rem;
+  margin-inline: auto;
+  border-radius: 10px;
+  border: 2px solid #579;
+  padding: 1rem;
+
+  background-image: linear-gradient(90deg, transparent 50%, #234 50% 75%, #345 75%);
+
+  h2{
+    font-weight: 900;
+    font-size: 5.3rem;
+    margin-block:0;
+    
+    background-image: radial-gradient(at 20% 20%, white, #888);
+    color: transparent;
+    background-clip: text;
+
+    &:hover:nth-child(1){
+      background-image:  linear-gradient(90deg, blue, cyan 40%);
+    }
+    &:hover:nth-child(2){
+      background-image:  linear-gradient(90deg, red, deeppink 40%);
+    }
+    &:hover:nth-child(3){
+      background-image:  linear-gradient(90deg, purple, rebeccapurple 40%);
+    }
+  }
+}
