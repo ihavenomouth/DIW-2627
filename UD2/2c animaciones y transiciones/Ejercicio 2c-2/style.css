@@ -28,6 +28,13 @@ h2{
   font-size: 2rem;
 }
 
+code{
+  background-color: #eee;
+  font-size: 1rem;
+}
+
+
+
 
 fieldset{
   border-radius: 10px;
@@ -41,7 +48,7 @@ fieldset{
 
 
 label{
-  /* box-shadow: 0px 0px 10px #999; */
+  box-shadow: 0px 0px 5px #999;
   border-radius: 10px;
   background-color: #eee;
   padding: 1rem;
@@ -60,9 +67,16 @@ label input[type="checkbox"]{
   display:none;
 }
 
+
+
+
 label.elegido{
-  background-color: lightcoral;
+  background-color: #459;
   transform: translateY(-30px);
   rotate: 10deg;
+  
   box-shadow: 0px 0px 10px #999;
+  color: white;
+  font-weight: 900;
 }
+
